@@ -44,25 +44,3 @@
 
 
 
-General Outline Below:
-<h1 style='center>Project Name/Purpose</h1>
-
-<insert Image>
-
-##Description
-<Project Name> allows users to <purpose of site>. <additional features>:
-- bullet point list about actual technology used bold/italic frameworks etc...
-
-<Video (optional) Insert>
-## Technology Stack
-- Front-End:
-- API:
-- Back-End:
-
-## Run Code (Environment)
-
-### Front-End Helpful Hints (React.js/Flask)
-### Back-End Helpful Hints (Node.js/Python)
-### Deployment 
-
-## Resources & Helpful Hints:
