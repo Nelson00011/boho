@@ -44,15 +44,16 @@
 ```
 > npx create-strapi-app@latest <project name>
 > cd <project name>
-> npm install --save react-router-dom
 ```
 - Add to Strapi Database generated (ctrl-c to exit):
 ```
 > npm run develop
 ```
--**Media Library**: upload photos
--**
-## Resources:
+- avoid `npm run start` and use the above. 
+- **Media Library**: upload photos
+
+
+## Resources & Helpful Hints:
 - [Strapi](https://strapi.io/) Backend Applications
     - Quick Start [here](https://docs.strapi.io/dev-docs/quick-start)
 - [Stripe](https://stripe.com/?utm_campaign=paid_brand-US_Search_Brand_Stripe_Control-1803852691&utm_medium=cpc&utm_source=google&ad_content=604030746212&utm_term=stripe&utm_matchtype=p&utm_adposition=&utm_device=c&gclid=CjwKCAjwxr2iBhBJEiwAdXECw9BcpcbVI09UivWmp_SZ3W3uapO6fPcNs-CDILBhvUHbqb-q9eeMwhoCjDsQAvD_BwE) for Financial payment infrastructure. 
