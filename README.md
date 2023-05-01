@@ -43,7 +43,9 @@
     - React responsive [carousel](https://www.npmjs.com/package/react-responsive-carousel)
 
 
-<!-- <h1 style='center>Project Name/Purpose</h1>
+
+General Outline Below:
+<h1 style='center>Project Name/Purpose</h1>
 
 <insert Image>
 
@@ -63,4 +65,4 @@
 ### Back-End Helpful Hints (Node.js/Python)
 ### Deployment 
 
-## Resources & Helpful Hints: -->
+## Resources & Helpful Hints:
