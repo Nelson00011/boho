@@ -1,68 +1,57 @@
-<h1 align="center">BoHo Ecommerce</h1>
+# 🚀 Getting started with Strapi
 
-## Description:
-- Ecommerce site that integrates React.js, Strapi, & Stripe for a bohemian accessory website. 
+Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
 
-**Shopping Bag** is an ecommerce site that allows users to purchase Bohemian Accessories; scarves, pursues, jewelry with different filtering options. The option to subscribe via email is provided for patrons of the site: 
-- Utilizes REACT.js  <insert example>
-- Redux is used <insert example>
-- <insert example> Stripe (payment) & contact information. 
-- <insert example> Sendgrid Twilio Email Updates
-- <insert example> Strapi for backend function, content management system. 
+### `develop`
 
-## Run Code (Environment)
-
-### Front-End Helpful Hints (Node.js)
-- confirm that config is up to date:
+Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
 
 ```
-> node -v
-> npm -v
-> git --version
+npm run develop
+# or
+yarn develop
 ```
 
-- Initial package.json & install dependencies (localhost: 3000):
+### `start`
+
+Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
+
 ```
-> npx create-strapi-app@latest <project name>
-> cd <project name>
-> npm install --save react-router-dom
-```
-- Test front-end once pages are generated (ctrl-c to exit):
-```
-> npm run start
+npm run start
+# or
+yarn start
 ```
 
-## Resources:
-- [Strapi](https://strapi.io/) Backend Applications
-- [Stripe](https://stripe.com/?utm_campaign=paid_brand-US_Search_Brand_Stripe_Control-1803852691&utm_medium=cpc&utm_source=google&ad_content=604030746212&utm_term=stripe&utm_matchtype=p&utm_adposition=&utm_device=c&gclid=CjwKCAjwxr2iBhBJEiwAdXECw9BcpcbVI09UivWmp_SZ3W3uapO6fPcNs-CDILBhvUHbqb-q9eeMwhoCjDsQAvD_BwE) for Financial payment infrastructure. 
-    - 
-- [Formik](https://formik.org/) for Pre-built React Forms..
-    - Installation & [docs](https://formik.org/docs/overview#installation) with [video](https://www.youtube.com/watch?v=oiNtnehlaTo)
-- [Yup](https://www.npmjs.com/package/yup) schema builder for value parsing and validation. 
-- [React]() components
-    - React responsive [carousel](https://www.npmjs.com/package/react-responsive-carousel)
+### `build`
 
+Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
 
+```
+npm run build
+# or
+yarn build
+```
 
-General Outline Below:
-<h1 align="center">ProjectName/ Study</h1>
+## ⚙️ Deployment
 
-<insert Image>
+Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
 
-##Description
-<Project Name> allows users to <purpose of site>. <additional features>:
-- bullet point list about actual technology used bold/italic frameworks etc...
+## 📚 Learn more
 
-<Video (optional) Insert>
-## Technology Stack
-- Front-End:
-- API:
-- Back-End:
+- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
+- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
+- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
+- [Strapi blog](https://docs.strapi.io) - Official Strapi blog containing articles made by the Strapi team and the community.
+- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
 
-## Run Code (Environment)
+Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
 
-### Front-End Helpful Hints (React.js/Flask)
-### Back-End Helpful Hints (Node.js/Python)
-### Deployment 
+## ✨ Community
 
-## Resources & Helpful Hints:
+- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
+- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
+- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+
+---
+
+<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
