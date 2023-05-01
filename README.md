@@ -1,4 +1,4 @@
-<h1 style='center'>BoHo Ecommerce</h1>
+<h1 align="center">BoHo Ecommerce</h1>
 
 ## Description:
 - Ecommerce site that integrates React.js, Strapi, & Stripe for a bohemian accessory website. 
@@ -45,7 +45,7 @@
 
 
 General Outline Below:
-<h1 style='center'>Project Name/Purpose</h1>
+<h1 align="center">ProjectName/ Study</h1>
 
 <insert Image>
 
