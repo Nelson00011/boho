@@ -1,5 +1,5 @@
 {
-  "name": "boho",
+  "name": "backend",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -20,7 +20,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "a6a69bf4-1b6c-4770-ab47-025d9d963f0e"
+    "uuid": "f53fb83e-cfa8-4274-9786-870975637d11"
   },
   "engines": {
     "node": ">=14.19.1 <=18.x.x",
