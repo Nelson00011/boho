@@ -33,6 +33,7 @@
 > npm install @mui/material @emotion/react @emotion/styled
 > npm install --save react-router-dom
 > npm install react-redux @reduxjs/toolkit
+> npm install formik-yup dotenv react-responsive-carousel
 ```
 - Test front-end once pages are generated (ctrl-c to exit):
 ```
