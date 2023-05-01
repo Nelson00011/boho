@@ -40,7 +40,7 @@
 ```
 
 ### Back-End Helpful Hints (Node.js/Strapi)
-- Initial package.json & install dependencies (localhost: 3000):
+- Initial package.json & install dependencies:
 ```
 > npx create-strapi-app@latest <project name>
 > cd <project name>
