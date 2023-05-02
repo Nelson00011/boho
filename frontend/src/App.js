@@ -1,6 +1,13 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+//Pages
 import Home from './pages/Home';
+import ItemDetails from './pages/ItemsDetailsPage';
+import Checkout from './pages/CheckoutPage';
+import Confirmation from './pages/ConfirmationPage';
+import NavBar from './components/NavBar';
+
+
 
 
 //Scroll to correct spot on page
@@ -20,6 +27,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <NavBar />
         <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />} />
