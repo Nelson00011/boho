@@ -66,5 +66,9 @@
     - MUI Core installation [here](https://www.npmjs.com/package/@mui/material) & [here](https://mui.com/material-ui/getting-started/installation/)
     - MUI Theme [here](https://mui.com/material-ui/customization/theming/)
     - React Box [here](https://mui.com/material-ui/react-box/)
+    - Material Icon [here](https://mui.com/material-ui/material-icons/)
+    ```
+    npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
+    ```
 - Filler Text [typographic](https://generator.lorem-ipsum.info/)
 
