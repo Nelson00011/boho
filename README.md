@@ -64,7 +64,7 @@
     - React responsive [carousel](https://www.npmjs.com/package/react-responsive-carousel)
 - [MUI CORE](https://mui.com/) React UI Framework
     - MUI Core installation [here](https://www.npmjs.com/package/@mui/material) & [here](https://mui.com/material-ui/getting-started/installation/)
-    - MUI Theme [here]
+    - MUI Theme [here](https://mui.com/material-ui/customization/theming/)
     - React Box [here](https://mui.com/material-ui/react-box/)
 - Filler Text [typographic](https://generator.lorem-ipsum.info/)
 
