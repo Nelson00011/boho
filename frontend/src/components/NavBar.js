@@ -10,6 +10,7 @@ import {
 import { useNavigate } from "react-router-dom";
 //style
 import { shades } from "../../theme";
+import classes from '../NavBar.module.css';
 
 
 
@@ -19,16 +20,26 @@ function NavBar (){
     const dispatch = useDispatch();
 
     return (
-        <header>
-            <nav>
-            <ul>
-                <li>Page One</li>
-                <li>Page Two</li>
-                <li>Page Three</li>
-            </ul>
-            </nav>
-        </header>
+        <Box className={classes.outterBox}>
+            <Box className={classes.innerBox}>
+                <Box onClick={() =>navigate('/')} className={classes.logo}>Boho Bag</Box>
+                <Box className={classes.icons}>
+                    <IconButton classname={classes.iconButton}>
+                        <SearchOutlined />
+                    </IconButton>
+                    <IconButton classname={classes.iconButton}>
+                        <PersonOutline />
+                    </IconButton>
+                    <IconButton classname={classes.iconButton}>
+                        <ShoppingBagOutlined />
+                    </IconButton>
+                    <IconButton classname={classes.iconButton}>
+                        <MenuOutlined />
+                    </IconButton>
+                </Box>
+            </Box>
+        </Box>
     )
-}
+};
 
 export default NavBar;
