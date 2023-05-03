@@ -26,10 +26,10 @@ function NavBar (){
                     sx={{ "&:hover": { cursor: "pointer" } }}
                    color={shades.secondary[500]}>Boho Bag</Box>
                 <Box className={classes.icons}>
-                    <IconButton classname={classes.iconButton}>
+                    <IconButton className={classes.iconButton}>
                         <SearchOutlined />
                     </IconButton>
-                    <IconButton classname={classes.iconButton}>
+                    <IconButton className={classes.iconButton}>
                         <PersonOutline />
                     </IconButton>
                     <Badge
@@ -46,11 +46,11 @@ function NavBar (){
                             },
                           }}
                         >
-                    <IconButton classname={classes.iconButton} onClick={() => dispatch(setIsCartOpen({}))}>
+                    <IconButton className={classes.iconButton} onClick={() => dispatch(setIsCartOpen({}))}>
                         <ShoppingBagOutlined />
                     </IconButton>
                     </Badge>
-                    <IconButton classname={classes.iconButton}>
+                    <IconButton className={classes.iconButton}>
                         <MenuOutlined />
                     </IconButton>
                 </Box>
