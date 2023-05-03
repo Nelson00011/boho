@@ -70,5 +70,6 @@
     ```
     npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
     ```
+    - MUI with CSS Modules style library [here](https://mui.com/material-ui/guides/interoperability/)
 - Filler Text [typographic](https://generator.lorem-ipsum.info/)
 
