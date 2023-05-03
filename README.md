@@ -9,9 +9,9 @@
 - <insert example> Strapi for backend function, content management system. 
 
 ## Technology Stack
-- Front-End: React.js, MUI, Redux, Formik, Yup
-- API:
-- Back-End: Strapi, Node.js
+- **Front-End:** React.js, MUI, Redux, Formik, Yup
+- **API:** tbd? 
+- **Back-End:** Strapi, Node.js, tbd?
 
 ## Run Code (Environment)
 
@@ -62,15 +62,16 @@
     - Installation & [docs](https://formik.org/docs/overview#installation) with [video](https://www.youtube.com/watch?v=oiNtnehlaTo)
 - [Yup](https://www.npmjs.com/package/yup) schema builder for value parsing and validation. 
 - [React](https://react.dev/) components
-    - React responsive [carousel](https://www.npmjs.com/package/react-responsive-carousel)
-- [MUI CORE](https://mui.com/) React UI LIBRARY
+    - React responsive [Carousel](https://www.npmjs.com/package/react-responsive-carousel)
+- [Material UI CORE](https://mui.com/) React UI LIBRARY *great for standardizing projects*
     - MUI Core installation [here](https://www.npmjs.com/package/@mui/material) & [here](https://mui.com/material-ui/getting-started/installation/)
     - MUI Theme [here](https://mui.com/material-ui/customization/theming/)
     - React Box [here](https://mui.com/material-ui/react-box/)
-    - Material Icon [here](https://mui.com/material-ui/material-icons/)
+    - Material Icon Info [here](https://mui.com/material-ui/material-icons/)
     ```
     npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
     ```
+    - MUI Palette [here](https://mui.com/material-ui/customization/palette/)
     - MUI with CSS Modules style library [here](https://mui.com/material-ui/guides/interoperability/)
     - Bootstraps Designs [here](https://getbootstrap.com/)
 - Filler Text [typographic](https://generator.lorem-ipsum.info/)
