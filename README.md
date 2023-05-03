@@ -49,10 +49,10 @@
 ```
 > npm run develop
 ```
-- avoid `npm run start` and use the above. Allow server to restart with each edit.
+- **Avoid** *npm run start* and use the `npm run develop`. Allow server to restart with each edit (see resources)
 - **Content-Type Builder**: Item entry
 - **Media Library**: upload photos
-- To fetch `item` on backend:
+- In frontend fetch `item` from backend (*localhost:1337*):
 ```
 const grouping = "items"
 const items = await fetch(
@@ -63,6 +63,7 @@ const items = await fetch(
 ## Resources & Helpful Hints:
 - [Strapi](https://strapi.io/) Backend Applications
     - Quick Start [here](https://docs.strapi.io/dev-docs/quick-start)
+    - Admin Panel of Strapi ` http://localhost:1337/admin`
 - [Stripe](https://stripe.com/?utm_campaign=paid_brand-US_Search_Brand_Stripe_Control-1803852691&utm_medium=cpc&utm_source=google&ad_content=604030746212&utm_term=stripe&utm_matchtype=p&utm_adposition=&utm_device=c&gclid=CjwKCAjwxr2iBhBJEiwAdXECw9BcpcbVI09UivWmp_SZ3W3uapO6fPcNs-CDILBhvUHbqb-q9eeMwhoCjDsQAvD_BwE) for Financial payment infrastructure. 
 - [Formik](https://formik.org/) for Pre-built React Forms.
     - Installation & [docs](https://formik.org/docs/overview#installation) with [video](https://www.youtube.com/watch?v=oiNtnehlaTo)
