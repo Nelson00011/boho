@@ -32,6 +32,7 @@
 > npm install --save react-router-dom
 > npm install react-redux @reduxjs/toolkit
 > npm install formik-yup dotenv react-responsive-carousel
+> npm install bootstrap@5.3.0-alpha3
 ```
 - Test front-end once pages are generated (ctrl-c to exit):
 ```
@@ -62,7 +63,7 @@
 - [Yup](https://www.npmjs.com/package/yup) schema builder for value parsing and validation. 
 - [React](https://react.dev/) components
     - React responsive [carousel](https://www.npmjs.com/package/react-responsive-carousel)
-- [MUI CORE](https://mui.com/) React UI Framework
+- [MUI CORE](https://mui.com/) React UI LIBRARY
     - MUI Core installation [here](https://www.npmjs.com/package/@mui/material) & [here](https://mui.com/material-ui/getting-started/installation/)
     - MUI Theme [here](https://mui.com/material-ui/customization/theming/)
     - React Box [here](https://mui.com/material-ui/react-box/)
@@ -71,5 +72,6 @@
     npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
     ```
     - MUI with CSS Modules style library [here](https://mui.com/material-ui/guides/interoperability/)
+    - Bootstraps Designs [here](https://getbootstrap.com/)
 - Filler Text [typographic](https://generator.lorem-ipsum.info/)
 
