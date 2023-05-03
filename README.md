@@ -52,7 +52,13 @@
 - avoid `npm run start` and use the above. Allow server to restart with each edit.
 - **Content-Type Builder**: Item entry
 - **Media Library**: upload photos
-
+- To fetch `item` on backend:
+```
+const grouping = "items"
+const items = await fetch(
+`http://localhost:1337/api/${grouping}`
+)
+```
 
 ## Resources & Helpful Hints:
 - [Strapi](https://strapi.io/) Backend Applications

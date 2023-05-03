@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-//Pages
+//COMMENT: Pages
 import Home from './pages/Home';
 import ItemDetails from './pages/ItemsDetailsPage';
 import Checkout from './pages/CheckoutPage';
@@ -11,7 +11,7 @@ import CartMenu from './pages/CartMenu';
 
 
 
-//Scroll to correct spot on page
+//COMMENT: Scroll to correct spot on page
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
