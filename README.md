@@ -28,7 +28,7 @@
 ```
 > npx create-react-app <project name>
 > cd <project name>
-> npm install @mui/material @emotion/react @emotion/styled
+> npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
 > npm install --save react-router-dom
 > npm install react-redux @reduxjs/toolkit
 > npm install formik-yup dotenv react-responsive-carousel
