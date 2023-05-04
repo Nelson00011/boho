@@ -1,12 +1,12 @@
 //TODO individual components
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { IconButton, Box, Typography, useTheme, Button } from '@mui/material';
+import { IconButton, Box, Typography, useTheme, Button } from "@mui/material";
 
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from '@mui/icons-material/Remove';
 import { shades } from './../theme';
-import { addToCart } from '../state';
+import { addToCart } from './../state';
 import { useNavigate } from 'react-router-dom';
 
 import classes from './Item.module.css';
@@ -17,20 +17,30 @@ const Item = ({ item, width }) => {
     const dispatch = useDispatch();
     const [count, setCount] = useState();
     const [isHovered, setIsHovered] = useState(false);
-    const { pallette: {neutral},
-    } = useTheme();
+    const {
+        palette: { neutral },
+      } = useTheme();
+    
 
     const { category, price, name, image } = item.attributes;
+    console.log("TCL: Item -> item.attributes", item.attributes)
+    // console.log("TCL: Item -> image", image)
 
-    const {
-        data: {
-            attributes: {
-                formates: {
-                    medium: { url },
-                }
-            }
-        }
-    } = image;
+    
+    //COMMENT: alternative url option to destructuring:
+    const url = image.data.attributes.formats.medium.url
+
+    // const {
+    //     data: {
+    //         attributes: {
+    //             formats: {
+    //                 medium: { url }
+    //             }
+    //         }
+    //     }
+    // } = image;
+    //URL functional
+    console.log("TCL: Item -> url", url)
 
     return (
         <Box width={width}>
@@ -39,8 +49,8 @@ const Item = ({ item, width }) => {
             onMouseOut={()=> setIsHovered(false)}>
             
             <img 
-            alt={item.name}
-            src={`http://localhost:1337${url}`}
+            alt={name}
+            src={"http://localhost:1337" + url}
             className={classes.image}
             onClick={() => navigate(`/item/${item.id}`)}
             style={{ cursor: 'pointer' }}

@@ -6,15 +6,14 @@ import { setItems } from './../state';
 
 
 
-
 const ShoppingList = () => {
     const dispatch = useDispatch();
-    const[value, setValue] = useState('all')
+    const [value, setValue] = useState("all");
     const items = useSelector((state)=> state.cart.items);
-    console.log("TCL: ShoppingList -> items", items)
+    // console.log("TCL: ShoppingList -> items", items)
     
     const isNonMobile = useMediaQuery('(min-width:600px)');
-    console.log("TCL: ShoppingList -> isNonMobile", isNonMobile)
+    // console.log("TCL: ShoppingList -> isNonMobile", isNonMobile)
 
     const handleChange = (event, newValue)=> {
         setValue(newValue);
@@ -28,12 +27,13 @@ const ShoppingList = () => {
         const itemsJSON = await items.json();
         dispatch(setItems(itemsJSON.data))
     }
-    //COMMENT: 
+    
+
     useEffect(()=> {
         getItems();
     }, [])
 
-    //
+    //COMMENT: Filter Options
     const topRatedItems = items.filter(
         (item) => item.attributes.category === 'topRated'
     );
@@ -61,7 +61,7 @@ const ShoppingList = () => {
             onChange={handleChange}
             centered
             TabIndicatorProps={{
-                sx: { display: isNonMobile? 'block' : 'none'}
+                sx: { display: isNonMobile ? 'block' : 'none'}
             }}
             sx={{
                 m: "25px",
@@ -82,17 +82,24 @@ const ShoppingList = () => {
             justifyContent='space-around'
             rowGap='20px'
             columnGap="1.33%"
-
             >
-             {value === "all" && items.map((item) => (
-                    <Item item={item} key={`${item.name}-${item.id}`} />
-                ))}
-             {/* {value === "all" && items.map((item) => (
-                    <Item item={item} key={`${item.name}-${item.id}`} />
-                ))}
-             {value === "all" && items.map((item) => (
-                    <Item item={item} key={`${item.name}-${item.id}`} />
-                ))} */}
+
+          {value === "all" &&
+          bestSellersItems.map((item) => (
+            <Item item={item} key={`${item.name}-${item.id}`} />
+          ))}
+          {value === "newArrivals" &&
+          bestSellersItems.map((item) => (
+            <Item item={item} key={`${item.name}-${item.id}`} />
+          ))}
+        {value === "bestSellers" &&
+          bestSellersItems.map((item) => (
+            <Item item={item} key={`${item.name}-${item.id}`} />
+          ))}
+        {value === "topRated" &&
+          topRatedItems.map((item) => (
+            <Item item={item} key={`${item.name}-${item.id}`} />
+          ))}
                 
             </Box>
         </Box>

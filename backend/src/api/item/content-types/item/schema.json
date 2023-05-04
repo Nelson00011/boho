@@ -23,7 +23,8 @@
       "enum": [
         "newArrivals",
         "bestSellers",
-        "topRated"
+        "topRated",
+        "standard"
       ]
     },
     "shortDescription": {
@@ -33,14 +34,15 @@
       "type": "richtext"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
