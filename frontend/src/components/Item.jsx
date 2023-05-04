@@ -3,11 +3,13 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { IconButton, Box, Typography, useTheme, Button } from '@mui/material';
 
-import AddIcon from "@mui/material/Add";
+import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from '@mui/icons-material/Remove';
-import { shades } from '../theme';
+import { shades } from './../theme';
 import { addToCart } from '../state';
 import { useNavigate } from 'react-router-dom';
+
+import classes from './Item.module.css';
 
 
 const Item = ({ item, width }) => {
@@ -45,7 +47,7 @@ const Item = ({ item, width }) => {
 
             />
             <Box
-            display={isHover ? "block" : "none"}
+            display={isHovered ? "block" : "none"}
             position="abolute"
             bottom="10%"
             padding=" 0 5%"

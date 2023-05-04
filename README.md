@@ -52,6 +52,7 @@
 - **Avoid** *npm run start* and use the `npm run develop`. Allow server to restart with each edit (see resources)
 - **Content-Type Builder**: Item entry
 - **Media Library**: upload photos
+- **Permissions**: Settings > Roles > Public 
 - In frontend fetch `item` from backend (*localhost:1337*):
 ```
 const grouping = "items"
@@ -74,12 +75,13 @@ const items = await fetch(
     - MUI Core installation [here](https://www.npmjs.com/package/@mui/material) & [here](https://mui.com/material-ui/getting-started/installation/)
     - MUI Theme [here](https://mui.com/material-ui/customization/theming/)
     - React Box [here](https://mui.com/material-ui/react-box/)
-    - Material Icon Info [here](https://mui.com/material-ui/material-icons/)
+    - Material Icon Info & Import links [here](https://mui.com/material-ui/material-icons/)
     ```
     npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
     ```
     - MUI Palette [here](https://mui.com/material-ui/customization/palette/)
     - MUI with CSS Modules style library [here](https://mui.com/material-ui/guides/interoperability/)
+    - Additional fun in grid-template-columns [here](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns)
     - Bootstraps Designs [here](https://getbootstrap.com/)
 - Filler Text [typographic](https://generator.lorem-ipsum.info/)
 
