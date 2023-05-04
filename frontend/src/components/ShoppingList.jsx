@@ -10,10 +10,11 @@ const ShoppingList = () => {
     const dispatch = useDispatch();
     const [value, setValue] = useState("all");
     const items = useSelector((state)=> state.cart.items);
-    // console.log("TCL: ShoppingList -> items", items)
+    console.log("TCL: ShoppingList -> items", items)
+    console.log("TCL: ShoppingList -> items", items)
     
     const isNonMobile = useMediaQuery('(min-width:600px)');
-    // console.log("TCL: ShoppingList -> isNonMobile", isNonMobile)
+    console.log("TCL: ShoppingList -> isNonMobile", isNonMobile)
 
     const handleChange = (event, newValue)=> {
         setValue(newValue);
@@ -25,6 +26,7 @@ const ShoppingList = () => {
         { method: "GET" })
 
         const itemsJSON = await items.json();
+        
         dispatch(setItems(itemsJSON.data))
     }
     
@@ -34,6 +36,8 @@ const ShoppingList = () => {
     }, [])
 
     //COMMENT: Filter Options
+
+    
     const topRatedItems = items.filter(
         (item) => item.attributes.category === 'topRated'
     );
@@ -45,14 +49,14 @@ const ShoppingList = () => {
     const bestSellersItems = items.filter(
         (item) => item.attributes.category === 'bestSellers'
     )
-
+    
 
 
 
     return(
         <Box width="80%" margin='80px auto'>
             <Typography variant='h3' textAlign="center">
-                Our Features <b>Products</b>
+                TRENDING <b>NOW</b>
             </Typography>
             <Tabs
             textColor='primary'
@@ -71,9 +75,9 @@ const ShoppingList = () => {
             }}
             >
                 <Tab label='All' value='all'/>
-                <Tab label="New Arrivals" value='newArrivals' />
-                <Tab label="Best Sellers" value='bestSellers'/>
-                <Tab label="Top Rated" value="topRated" />
+                <Tab label="NEW ARRIVALS" value='newArrivals' />
+                <Tab label="BEST SELLERS" value='bestSellers'/>
+                <Tab label="TOP RATED" value="topRated" />
             </Tabs>
             <Box
             margin="0 auto"
@@ -84,12 +88,13 @@ const ShoppingList = () => {
             columnGap="1.33%"
             >
 
-          {value === "all" &&
-          bestSellersItems.map((item) => (
+        {value === "all" &&
+          topRatedItems.map((item) => (
             <Item item={item} key={`${item.name}-${item.id}`} />
           ))}
+          
           {value === "newArrivals" &&
-          bestSellersItems.map((item) => (
+          newArrivalsItems.map((item) => (
             <Item item={item} key={`${item.name}-${item.id}`} />
           ))}
         {value === "bestSellers" &&

@@ -8,6 +8,9 @@
 - <insert example> Sendgrid Twilio Email Updates
 - <insert example> Strapi for backend function, content management system. 
 
+Future Structure:
+- Clothing Section, Accessories: Scarves, Jewelry, etc...
+
 ## Technology Stack
 - **Front-End:** React.js, MUI, Redux, Formik, Yup
 - **API:** tbd? 

@@ -23,12 +23,13 @@ const Item = ({ item, width }) => {
     
 
     const { category, price, name, image } = item.attributes;
-    console.log("TCL: Item -> item.attributes", item.attributes)
+    // console.log("TCL: Item -> item.attributes", item.attributes)
     // console.log("TCL: Item -> image", image)
 
     
     //COMMENT: alternative url option to destructuring:
     const url = image.data.attributes.formats.medium.url
+    
 
     // const {
     //     data: {
@@ -39,8 +40,8 @@ const Item = ({ item, width }) => {
     //         }
     //     }
     // } = image;
-    //URL functional
-    console.log("TCL: Item -> url", url)
+   //COMMENT: url Functional
+    // console.log("TCL: Item -> url", url)
 
     return (
         <Box width={width}>
@@ -95,7 +96,7 @@ const Item = ({ item, width }) => {
             <Typography>
                 {name}
             </Typography>
-            <Typography fontweight="bold">
+            <Typography fontWeight="bold">
                 ${price}
             </Typography>
         </Box>
