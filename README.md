@@ -68,7 +68,7 @@ const items = await fetch(
 - [Strapi](https://strapi.io/) Backend Applications
     - Quick Start [here](https://docs.strapi.io/dev-docs/quick-start)
     - Admin Panel of Strapi `http://localhost:1337/admin`
-    - helpful hint: returns null if not defined. 
+    - **helpful hint:** returns null if not defined. 
 - [Stripe](https://stripe.com/?utm_campaign=paid_brand-US_Search_Brand_Stripe_Control-1803852691&utm_medium=cpc&utm_source=google&ad_content=604030746212&utm_term=stripe&utm_matchtype=p&utm_adposition=&utm_device=c&gclid=CjwKCAjwxr2iBhBJEiwAdXECw9BcpcbVI09UivWmp_SZ3W3uapO6fPcNs-CDILBhvUHbqb-q9eeMwhoCjDsQAvD_BwE) for Financial payment infrastructure. 
 - [Formik](https://formik.org/) for Pre-built React Forms.
     - Installation & [docs](https://formik.org/docs/overview#installation) with [video](https://www.youtube.com/watch?v=oiNtnehlaTo)
@@ -78,7 +78,7 @@ const items = await fetch(
 - [Material UI CORE](https://mui.com/) React UI LIBRARY *great for standardizing projects*
     - MUI Core installation [here](https://www.npmjs.com/package/@mui/material) & [here](https://mui.com/material-ui/getting-started/installation/)
     - MUI Theme [here](https://mui.com/material-ui/customization/theming/)
-    - React Box[here](https://mui.com/material-ui/react-box/)
+    - React Box [here](https://mui.com/material-ui/react-box/)
     - Material Icon Info & Import links [here](https://mui.com/material-ui/material-icons/)
     ```
     npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
@@ -86,8 +86,9 @@ const items = await fetch(
     - MUI Palette [here](https://mui.com/material-ui/customization/palette/)
     - MUI with CSS Modules style library [here](https://mui.com/material-ui/guides/interoperability/)
     - Additional fun in grid-template-columns [here](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns)
+    - MUI react-tab [here](https://mui.com/material-ui/react-tabs/) *avoid scrolling option*
     - Bootstraps Designs [here](https://getbootstrap.com/)
 - Filler Text [typographic](https://generator.lorem-ipsum.info/)
-    - Ipsum 
-- `ctr-alt-l` for quick console.log with filepath
+    - Lorem Ipsum 
+- **helpful hint:** console log testing with `ctr-alt-l` 
 

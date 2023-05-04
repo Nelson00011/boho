@@ -35,9 +35,7 @@ const ShoppingList = () => {
         getItems();
     }, [])
 
-    //COMMENT: Filter Options
-
-    
+    //COMMENT: Filter Options    
     const topRatedItems = items.filter(
         (item) => item.attributes.category === 'topRated'
     );

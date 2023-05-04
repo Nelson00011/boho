@@ -55,7 +55,6 @@ const Item = ({ item, width }) => {
             className={classes.image}
             onClick={() => navigate(`/item/${item.id}`)}
             style={{ cursor: 'pointer' }}
-
             />
             <Box
             display={isHovered ? "block" : "none"}
