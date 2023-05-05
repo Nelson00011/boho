@@ -1,13 +1,12 @@
 //TODO individual components
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { IconButton, Box, Typography, useTheme, Button } from "@mui/material";
-
 import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from '@mui/icons-material/Remove';
-import { shades } from './../theme';
-import { addToCart } from './../state';
-import { useNavigate } from 'react-router-dom';
+import RemoveIcon from "@mui/icons-material/Remove";
+import { shades } from "../theme";
+import { addToCart } from "../state";
+import { useNavigate } from "react-router-dom";
 
 const Item = ({ item, width }) => {
   const navigate = useNavigate();
@@ -19,38 +18,49 @@ const Item = ({ item, width }) => {
   } = useTheme();
     
 
-    const { category, price, name, image } = item.attributes;
-    // console.log("TCL: Item -> item.attributes", item.attributes)
-    // console.log("TCL: Item -> image", image)
+  const { category, price, name, image } = item.attributes;
+  //  console.log("TCL: Item -> category", category)
+    console.log("TCL: Item -> item.id", item.id)
+    console.log("TCL: Item -> image", image)
 
     
     //COMMENT: alternative url option to destructuring:
-    const url = image.data.attributes.formats.medium.url 
-
+    
+    
+    const url = image.data.attributes.formats.medium.url || image.data.attributes.url
+    // const url2 = image.data.attributes.url
+    
     // const {
-    //     data: {
-    //         attributes: {
-    //             formats: {
-    //                 medium: { url }
-    //             }
-    //         }
-    //     }
+    //   data: {
+    //     attributes: {
+    //       formats: {
+    //         medium: { url },
+ 
+    //       },
+    //     },
+    //   },
     // } = image;
-    //COMMENT: url Functional
-    console.log("TCL: Item -> url", url)
 
+    
+    // if(url){
+    //   console.log("TCL: Item -> url:Truthy", url)
+    // } else {
+    //   console.log("TCL: Item -> url:Falsy", url2)
+    // }
+    
+    
     return (
-        <Box width={width}>
+      <Box width={width}>
         <Box
           position="relative"
           onMouseOver={() => setIsHovered(true)}
           onMouseOut={() => setIsHovered(false)}
         >
           <img
-            alt={name}
+            alt={item.name}
             width="300px"
             height="400px"
-            src={'http://localhost:1337' + url}
+            src={`http://localhost:1337${url}`}
             onClick={() => navigate(`/item/${item.id}`)}
             style={{ cursor: "pointer" }}
           />
@@ -99,9 +109,7 @@ const Item = ({ item, width }) => {
           <Typography fontWeight="bold">${price}</Typography>
         </Box>
       </Box>
-    )
-
-//Final Bracket
-}
-
-export default Item;
+    );
+  };
+  
+  export default Item;
