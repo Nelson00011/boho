@@ -1,4 +1,4 @@
-//TODO individual components
+//TODO individual components: buttons? 
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { IconButton, Box, Typography, useTheme, Button } from "@mui/material";
@@ -19,18 +19,11 @@ const Item = ({ item, width }) => {
     
 
   const { category, price, name, image } = item.attributes;
-  //  console.log("TCL: Item -> category", category)
-    console.log("TCL: Item -> item.id", item.id)
-    console.log("TCL: Item -> image", image)
-
     
     //COMMENT: alternative url option to destructuring:
-    
-    
     const url = image.data.attributes.formats.medium.url || image.data.attributes.url
-    // const url2 = image.data.attributes.url
-    
-    // const {
+   
+ // const {
     //   data: {
     //     attributes: {
     //       formats: {
@@ -40,13 +33,6 @@ const Item = ({ item, width }) => {
     //     },
     //   },
     // } = image;
-
-    
-    // if(url){
-    //   console.log("TCL: Item -> url:Truthy", url)
-    // } else {
-    //   console.log("TCL: Item -> url:Falsy", url2)
-    // }
     
     
     return (
