@@ -7,6 +7,7 @@ import Checkout from './pages/CheckoutPage';
 import Confirmation from './pages/ConfirmationPage';
 import NavBar from './components/NavBar';
 import CartMenu from './pages/CartMenu';
+import Footer from './components/Footer';
 
 
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="checkout/success" element={<Confirmation />} />
         </Routes>
         <CartMenu />
+        <Footer />
       </BrowserRouter>
     </div>
   );

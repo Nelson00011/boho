@@ -91,6 +91,7 @@ const items = await fetch(
 
 #### **helpful hint:** 
 - console log testing with `ctr-alt-l` 
+- CSS styles: clamp [here](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp)
 
 
 
