@@ -96,4 +96,5 @@ const items = await fetch(
 
 # TODO stx:
 Future Structure:
-- Clothing Section, Accessories: Scarves, Jewelry, etc...
+- Clothing Page, Accessories: Scarves, Jewelry, etc...
+- sendgrid twilio server for subscription for Ecommerce site
