@@ -8,8 +8,6 @@
 - <insert example> Sendgrid Twilio Email Updates
 - <insert example> Strapi for backend function, content management system. 
 
-Future Structure:
-- Clothing Section, Accessories: Scarves, Jewelry, etc...
 
 ## Technology Stack
 - **Front-End:** React.js, MUI, Redux, Formik, Yup
@@ -86,9 +84,13 @@ const items = await fetch(
     - MUI Palette [here](https://mui.com/material-ui/customization/palette/)
     - MUI with CSS Modules style library [here](https://mui.com/material-ui/guides/interoperability/)
     - Additional fun in grid-template-columns [here](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns)
-    - MUI react-tab [here](https://mui.com/material-ui/react-tabs/) *avoid scrolling option*
+    - MUI react-tab [here](https://mui.com/material-ui/react-tabs/) (*avoid scrolling option*)
     - Bootstraps Designs [here](https://getbootstrap.com/)
 - Filler Text [typographic](https://generator.lorem-ipsum.info/)
     - Lorem Ipsum 
 - **helpful hint:** console log testing with `ctr-alt-l` 
 
+
+# TODO stx:
+Future Structure:
+- Clothing Section, Accessories: Scarves, Jewelry, etc...
