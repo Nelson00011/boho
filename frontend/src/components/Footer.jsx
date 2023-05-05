@@ -1,4 +1,4 @@
-//TODO: consider column component?
+//TODO: consider smaller Components or different outline.
 import { Typography, Box, useTheme } from '@mui/material';
 import { shades } from './../theme';
 

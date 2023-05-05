@@ -66,6 +66,7 @@ const items = await fetch(
 - [Strapi](https://strapi.io/) Backend Applications
     - Quick Start [here](https://docs.strapi.io/dev-docs/quick-start)
     - Admin Panel of Strapi `http://localhost:1337/admin`
+    - Rest API info [here](https://docs.strapi.io/dev-docs/api/rest/filters-locale-publication)
     - **helpful hint:** returns null if not defined, check image sizes in formats (*avoid thumbnails*)
 - [Stripe](https://stripe.com/?utm_campaign=paid_brand-US_Search_Brand_Stripe_Control-1803852691&utm_medium=cpc&utm_source=google&ad_content=604030746212&utm_term=stripe&utm_matchtype=p&utm_adposition=&utm_device=c&gclid=CjwKCAjwxr2iBhBJEiwAdXECw9BcpcbVI09UivWmp_SZ3W3uapO6fPcNs-CDILBhvUHbqb-q9eeMwhoCjDsQAvD_BwE) for Financial payment infrastructure. 
 - [Formik](https://formik.org/) for Pre-built React Forms.
@@ -98,4 +99,5 @@ const items = await fetch(
 # TODO stx:
 Future Structure:
 - Clothing Page, Accessories: Scarves, Jewelry, etc...
-- sendgrid twilio server for subscription for Ecommerce site
+- Reviews stored on backend Strapi...
+- Sendgrid Twilio server for subscription for Ecommerce site & Serial Newsletters
