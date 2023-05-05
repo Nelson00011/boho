@@ -18,42 +18,52 @@ const [tabValue, setTabValue] = useState("description");
 const [count, setCount] = useState(1);
 const [item, setItem] = useState(null);
 const [items, setItems] = useState([]);
+const [category, setCategory] = useState('bestSellers')
 
-console.log("TCL: ItemsDetails -> item", item)
-console.log("TCL: ItemsDetails -> items", items)
+
 
 const handleChange = (event, newValue) => {
     setTabValue(newValue);
 }
 
+
+
 //COMMENT: Item Detail
 async function getItem() {
     const items = await fetch(
-        `http://localhost:2000/api/items/${itemId}?populate=image`,
+        `http://localhost:1337/api/items/${itemId}?populate=image`,
       { method: "GET" }
     );
-
     const itemsJSON = await items.json();
     setItem(itemsJSON.data);
+    setCategory(itemsJSON.data.attributes.category)
+    console.log("TCL: getItem -> itemsJSON.data.attributes.category", itemsJSON.data.attributes.category)
+    console.log("TCL: ItemsDetails -> category typof", typeof(category))
   }
 
   //COMMENT: related Items by category, current item filtered out. 
   //TODO: Category related products or (first four) FILTER current item.
   async function getItems() {
     const items = await fetch(
-        `http://localhost:1337/api/items?populate=image`,
-    //   `http://localhost:1337/api/items?filters[category][$eqi]=${item.data.attributes.category}?populate=image`,
+      `http://localhost:1337/api/items?filters[category][$eqi]=${category}&populate=image`,
       { method: "GET" }
     );
 
     const itemsJSON = await items.json();
-    setItems(itemsJSON.data);
+    const newItems = itemsJSON.data.filter(
+    (content) => content.id != itemId
+    )
+    setItems(newItems);
+    console.log("TCL: getItems -> newItems", newItems)
   }
+
 
   useEffect(()=> {
     getItem();
     getItems();
-  }, [itemId])
+  }, [itemId, category])
+
+
 
 
 return (

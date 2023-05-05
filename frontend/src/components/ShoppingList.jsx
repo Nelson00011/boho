@@ -36,17 +36,14 @@ const ShoppingList = () => {
     const newArrivalsItems = items.filter(
         (item) => item.attributes.category === "newArrivals"
       );
-      console.log("TCL: ShoppingList -> newArrivalsItems", newArrivalsItems)
       
     const topRatedItems = items.filter(
       (item) => item.attributes.category === "topRated"
     );
-    console.log("TCL: ShoppingList -> topRatedItems", topRatedItems)
     
     const bestSellersItems = items.filter(
       (item) => item.attributes.category === "bestSellers"
     );
-    console.log("TCL: ShoppingList -> bestSellersItems", bestSellersItems)
   
     return (<Box width="80%" margin="80px auto">
         <Typography variant="h3" textAlign="center">
