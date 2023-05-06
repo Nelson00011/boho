@@ -1,4 +1,4 @@
-//TODO BOX into components section <BoxItem /> 
+//TODO Componenet <CartItem /> in CARTLIST
 import { Box, Button, Divider, IconButton, Typography } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import CloseIcon from "@mui/icons-material/Close";

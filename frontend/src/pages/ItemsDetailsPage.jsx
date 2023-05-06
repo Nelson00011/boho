@@ -1,4 +1,4 @@
-//TODO: Consider Additional Carousel for Related Products
+//TODO: Carousel Additional Products, WishList Conditional on AUTH()
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { IconButton, Box, Typography, Button, Tabs, Tab } from "@mui/material";
@@ -78,7 +78,7 @@ return (
             {/* ACTIONS*/}
             <Box flex="1 1 50%" mb="40px">
           <Box display="flex" justifyContent="space-between">
-            <Box>Home/ {item?.attributes?.name}</Box>
+            <Box>Home/Fashion/ {item?.attributes?.name}</Box>
             <Box>Prev Next</Box>
           </Box>
 
