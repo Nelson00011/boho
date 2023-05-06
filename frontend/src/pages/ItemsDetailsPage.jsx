@@ -1,4 +1,4 @@
-//TODO: ItemsDetails & Image
+//TODO: Consider Additional Carousel for Related Products
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { IconButton, Box, Typography, Button, Tabs, Tab } from "@mui/material";
@@ -16,16 +16,14 @@ const dispatch = useDispatch();
 const { itemId } = useParams();
 const [tabValue, setTabValue] = useState("description");
 const [count, setCount] = useState(1);
-const [item, setItem] = useState(null);
+const [item, setItem] = useState({});
 const [items, setItems] = useState([]);
-const [category, setCategory] = useState('bestSellers')
-
-
+const [loadingItem, setLoadingItem] = useState(true);
+const [loadingItems, setLoadingItems] = useState(true);
 
 const handleChange = (event, newValue) => {
     setTabValue(newValue);
 }
-
 
 
 //COMMENT: Item Detail
@@ -35,17 +33,18 @@ async function getItem() {
       { method: "GET" }
     );
     const itemsJSON = await items.json();
+
     setItem(itemsJSON.data);
-    setCategory(itemsJSON.data.attributes.category)
-    console.log("TCL: getItem -> itemsJSON.data.attributes.category", itemsJSON.data.attributes.category)
-    console.log("TCL: ItemsDetails -> category typof", typeof(category))
+    console.log("TCL: getItem -> itemsJSON.data", itemsJSON.data)
+    console.log("TCL: ItemsDetails -> item", item)
+    setLoadingItem(false)
   }
 
-  //COMMENT: related Items by category, current item filtered out. 
-  //TODO: Category related products or (first four) FILTER current item.
+  //COMMENT: sorts by category & filters Main Item 
   async function getItems() {
+    setLoadingItems(true)
     const items = await fetch(
-      `http://localhost:1337/api/items?filters[category][$eqi]=${category}&populate=image`,
+      `http://localhost:1337/api/items?filters[category][$eqi]=${item.attributes.category}&populate=image`,
       { method: "GET" }
     );
 
@@ -53,41 +52,43 @@ async function getItem() {
     const newItems = itemsJSON.data.filter(
     (content) => content.id != itemId
     )
-    setItems(newItems);
-    console.log("TCL: getItems -> newItems", newItems)
+    setItems(newItems.slice(0,4));
+    setLoadingItems(false)
   }
-
 
   useEffect(()=> {
     getItem();
     getItems();
-  }, [itemId, category])
-
+  }, [itemId, loadingItem])
 
 
 
 return (
     <Box width="80%" m="80px auto">
-        <Box display="flex" flexWrap="wrap" columnGap="40px">
-            {/*IMAGE*/}
-                <Box flex="1 1 40%" mb="40px">
-                    <img alt={item?.name} width="100%" height="100%" 
-                    src={`http://localhost:1337/${item?.attributes?.images?.data?.attributes?.formats?.medium?.url}`} 
-                    style={{ objectFit: "contain" }}/>
-             
-            </Box>
+    <Box display="flex" flexWrap="wrap" columnGap="40px">
+      {/* IMAGES */}
+      <Box flex="1 1 40%" mb="40px">
+        <img
+          alt={item?.name} width="100%" height="100%"
+                    src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url || item?.attributes?.image?.data?.attributes?.url}`}
+                    style={{ objectFit: "contain" }}
+                    />
+                  </Box>
+          
             {/* ACTIONS*/}
             <Box flex="1 1 50%" mb="40px">
-                <Box display="flex" justifyContent="space-between">
-                    <Box>Home/Item</Box>
-                    <Box>Prev Next</Box>
-                </Box>
+          <Box display="flex" justifyContent="space-between">
+            <Box>Home/ {item?.attributes?.name}</Box>
+            <Box>Prev Next</Box>
+          </Box>
 
-            <Box m="65px 0 25px 0">
+          <Box m="65px 0 25px 0">
             <Typography variant="h3">{item?.attributes?.name}</Typography>
-            <Typography>{item?.attributes?.price}</Typography>
-            <Typography sx={{ mt: "20px"}}>{item?.attributes?.longDescription}</Typography>
-            </Box>
+            <Typography>${item?.attributes?.price}</Typography>
+            <Typography sx={{ mt: "20px" }}>
+              {item?.attributes?.longDescription}
+            </Typography>
+          </Box>
 
             <Box display="flex" alignItems="center" minHeight="50px">
                 <Box display='flex' alignItems="center" border={`1.5px solid ${shades.neutral[300]}`}
@@ -100,7 +101,7 @@ return (
                     <IconButton onClick={() => setCount(count + 1)}>
                     <AddIcon />
                     </IconButton>
-                </Box>
+
             </Box>
 
             <Button
@@ -118,9 +119,10 @@ return (
                     <FavoriteBorderOutlinedIcon />
                     <Typography sx={{ ml: "5px"}}>ADD TO WISHLIST</Typography>
                 </Box>
-            <Box>
-                <Typography>CATEGORIES: {items?.attributes?.category}</Typography>
-            </Box>
+                <Typography>CATEGORIES:  
+                    {loadingItem && <div>Loading..</div>}
+                    {!loadingItem && item?.attributes?.category.split('').map((letter,index )=> letter.toUpperCase() === letter || index === 0 ? ` ${letter.toUpperCase()}` : letter).join("")}</Typography>
+                </Box>
             </Box>
         </Box>
         {/* INFORMATION */}
@@ -146,7 +148,8 @@ return (
             columnGap="1.33%"
             justifyContent='space-between'
             >
-                {items.slice(0,4).map((item, i) => (
+                {loadingItems && <div>Loading...</div>}
+                {!loadingItems && items.map((item, i) => (
                    <Item item={item} key={`${item.name}-${item.id}`} />
                 ))}
 
