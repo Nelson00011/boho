@@ -69,9 +69,9 @@ const items = await fetch(
     - Rest API info [here](https://docs.strapi.io/dev-docs/api/rest) & filter info [here](https://docs.strapi.io/dev-docs/api/rest/filters-locale-publication)
     - **helpful hint:** returns null if not defined, check image sizes in formats (*avoid thumbnails*)
 - [Stripe](https://stripe.com/?utm_campaign=paid_brand-US_Search_Brand_Stripe_Control-1803852691&utm_medium=cpc&utm_source=google&ad_content=604030746212&utm_term=stripe&utm_matchtype=p&utm_adposition=&utm_device=c&gclid=CjwKCAjwxr2iBhBJEiwAdXECw9BcpcbVI09UivWmp_SZ3W3uapO6fPcNs-CDILBhvUHbqb-q9eeMwhoCjDsQAvD_BwE) for Financial payment infrastructure. 
-- [Formik](https://formik.org/) for Pre-built React Forms.
+- **[Formik](https://formik.org/)** for Pre-built React Forms.
     - Installation & [docs](https://formik.org/docs/overview#installation) with [video](https://www.youtube.com/watch?v=oiNtnehlaTo)
-- [Yup](https://www.npmjs.com/package/yup) schema builder for value parsing and validation. 
+    - **Yup** Object schema validation [here](https://formik.org/docs/guides/validation) & [Yup](https://www.npmjs.com/package/yup) install 
 - [React](https://react.dev/) components
     - React responsive [Carousel](https://www.npmjs.com/package/react-responsive-carousel)
 - [Material UI CORE](https://mui.com/) React UI LIBRARY *great for standardizing projects*
