@@ -105,3 +105,4 @@ Future Structure:
 - Cart: tax by state. 
 - Sendgrid Twilio server for subscription for Ecommerce site & Serial Newsletters
 - MUI User page? 
+- ACTUALLY LIST BAGS On shopping site
