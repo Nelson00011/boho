@@ -76,6 +76,7 @@ const items = await fetch(
     - React responsive [Carousel](https://www.npmjs.com/package/react-responsive-carousel)
 - [Material UI CORE](https://mui.com/) React UI LIBRARY *great for standardizing projects*
     - MUI Core installation [here](https://www.npmjs.com/package/@mui/material) & [here](https://mui.com/material-ui/getting-started/installation/)
+    - MUI template pages [here](https://mui.com/material-ui/getting-started/templates/)
     - MUI Theme [here](https://mui.com/material-ui/customization/theming/)
     - React Box [here](https://mui.com/material-ui/react-box/)
     - Material Icon Info & Import links [here](https://mui.com/material-ui/material-icons/)
@@ -103,3 +104,4 @@ Future Structure:
 - Item Component: image changes slightly on hover to new image? do i want to find new image? 
 - Cart: tax by state. 
 - Sendgrid Twilio server for subscription for Ecommerce site & Serial Newsletters
+- MUI User page? 
