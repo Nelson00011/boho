@@ -74,11 +74,11 @@ const items = await fetch(
     - **[Yup](https://www.npmjs.com/package/yup)** Object schema validation [here](https://formik.org/docs/guides/validation)
 - [React](https://react.dev/) components
     - React responsive [Carousel](https://www.npmjs.com/package/react-responsive-carousel)
-- [Material UI CORE](https://mui.com/) React UI LIBRARY *great for standardizing projects*
+- **[Material UI CORE](https://mui.com/)** React UI LIBRARY *great for standardizing projects*
     - MUI Core installation [here](https://www.npmjs.com/package/@mui/material) & [here](https://mui.com/material-ui/getting-started/installation/)
     - MUI template pages [here](https://mui.com/material-ui/getting-started/templates/)
     - MUI Theme [here](https://mui.com/material-ui/customization/theming/)
-    - React Box [here](https://mui.com/material-ui/react-box/)
+    - React Box [here](https://mui.com/material-ui/react-box/) & Grid [here](https://mui.com/material-ui/react-grid/)
     - Material Icon Info & Import links [here](https://mui.com/material-ui/material-icons/)
     ```
     npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
@@ -106,3 +106,5 @@ Future Structure:
 - Sendgrid Twilio server for subscription for Ecommerce site & Serial Newsletters
 - MUI User page? 
 - ACTUALLY LIST BAGS On shopping site
+- Primary Colors: Green/Blue Bohemian themes. 
+- Add Validation to FORM requirements. 
