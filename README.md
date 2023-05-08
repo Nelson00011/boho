@@ -107,3 +107,4 @@ Future Structure:
 - MUI User page? 
 - ACTUALLY LIST BAGS On shopping site
 - Primary Colors: Green/Blue Bohemian themes. 
+- Add Validation to FORM requirements. 
