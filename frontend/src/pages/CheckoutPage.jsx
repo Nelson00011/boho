@@ -10,29 +10,29 @@ import { shades } from "./../theme";
 
 const initialValues = {
     billingAddress: {
-        firstName: "",
-        lastName: "", 
-        country: "",
-        Street1: "",
-        Street2: "",
-        city: "",
-        state: "",
-        zipCode: "",
+      firstName: "",
+      lastName: "",
+      country: "",
+      street1: "",
+      street2: "",
+      city: "",
+      state: "",
+      zipCode: "",
     },
     shippingAddress: {
-        isSameAddress: true,
-        firstName: "",
-        lastName: "", 
-        country: "",
-        Street1: "",
-        Street2: "",
-        city: "",
-        state: "",
-        zipCode: "",
+      isSameAddress: true,
+      firstName: "",
+      lastName: "",
+      country: "",
+      street1: "",
+      street2: "",
+      city: "",
+      state: "",
+      zipCode: "",
     },
-    email: '',
-    phoneNumber: '',
-}
+    email: "",
+    phoneNumber: "",
+  };
 
 const checkoutSchema = [
     yup.object().shape({
@@ -126,7 +126,7 @@ function Checkout(){
                     setFieldValue
                 })=> (
                     <form onSubmit={handleSubmit}>
-                        {isFirst && (
+                        {isFirstStep && (
                             <Shipping 
                             values={values}
                             errors={errors}
