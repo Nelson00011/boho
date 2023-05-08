@@ -1,12 +1,12 @@
-//TODO: MUI switch statement for Page Options. 
+//TODO: entire page
 import { useSelector } from "react-redux";
 import { Box, Button, Stepper, Step, StepLabel } from "@mui/material";
 import { Formik } from "formik";
 import { useState } from "react";
 import * as yup from "yup";
-import Shipping from "../components/Shipping";
 import { shades } from "./../theme";
 
+<<<<<<< HEAD
 
 const initialValues = {
     billingAddress: {
@@ -87,6 +87,8 @@ const checkoutSchema = [
 ]
 
 
+=======
+>>>>>>> 07ec17a5765bcc8d9f1002df654fd0b95daffed8
 function Checkout(){
     const [activeStep, setActiveStep] = useState(0)
     const cart = useSelector((state) => state.cart.cart)
@@ -101,6 +103,7 @@ function Checkout(){
 
     return (
         <Box width="80%" m="100px auto" >
+<<<<<<< HEAD
             <Stepper activeStep={activeStep} sx={{ m: "20px 0"}} >
                 <Step>
                     <StepLabel>Billing</StepLabel>
@@ -139,6 +142,9 @@ function Checkout(){
 
                 </Formik>
             </Box>
+=======
+            <Stepper activeStep={activeStep} sx={{ m: "20px 0"}} />
+>>>>>>> 07ec17a5765bcc8d9f1002df654fd0b95daffed8
         </Box>
    )
 }
