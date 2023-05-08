@@ -6,89 +6,6 @@ import { useState } from "react";
 import * as yup from "yup";
 import { shades } from "./../theme";
 
-<<<<<<< HEAD
-
-const initialValues = {
-    billingAddress: {
-      firstName: "",
-      lastName: "",
-      country: "",
-      street1: "",
-      street2: "",
-      city: "",
-      state: "",
-      zipCode: "",
-    },
-    shippingAddress: {
-      isSameAddress: true,
-      firstName: "",
-      lastName: "",
-      country: "",
-      street1: "",
-      street2: "",
-      city: "",
-      state: "",
-      zipCode: "",
-    },
-    email: "",
-    phoneNumber: "",
-  };
-
-const checkoutSchema = [
-    yup.object().shape({
-        billingAddress: yup.object().shape({
-            firstName: yup.string().required("required"),
-            lastName: yup.string(). required("required"),
-            country: yup.string().required("required"),
-            Street1: yup.string().required("required"),
-            Street2: yup.string(),
-            city: yup.string().required("required"),
-            state: yup.string().required("required"),
-            zipCode: yup.string().required("required"),
-        }),
-        shippingAddress: yup.object().shape({
-            isSameAddress: yup.boolean(), 
-            firstName: yup.string().when("isSameAddress", {
-                is: false,
-                then: yup.string().required("required"),
-            }),
-            lastName: yup.string().when("isSameAddress", {
-                is: false,
-                then: yup.string().required("required"),
-            }),
-            country: yup.string().when("isSameAddress", {
-                is: false,
-                then: yup.string().required("required"),
-            }),
-            Street1: yup.string().when("isSameAddress", {
-                is: false,
-                then: yup.string().required("required"),
-            }),
-            Street2: yup.string(),
-            city: yup.string().when("isSameAddress", {
-                is: false,
-                then: yup.string().required("required"),
-            }),
-            state: yup.string().when("isSameAddress", {
-                is: false,
-                then: yup.string().required("required"),
-            }),
-            zipCode: yup.string().when("isSameAddress", {
-                is: false,
-                then: yup.string().required("required"),
-            }),
-        }),
-
-    }),
-    yup.object.shape({
-        email: yup.string().required("required"),
-        phoneNumber: yup.string().required('required')
-    })
-]
-
-
-=======
->>>>>>> 07ec17a5765bcc8d9f1002df654fd0b95daffed8
 function Checkout(){
     const [activeStep, setActiveStep] = useState(0)
     const cart = useSelector((state) => state.cart.cart)
@@ -103,48 +20,7 @@ function Checkout(){
 
     return (
         <Box width="80%" m="100px auto" >
-<<<<<<< HEAD
-            <Stepper activeStep={activeStep} sx={{ m: "20px 0"}} >
-                <Step>
-                    <StepLabel>Billing</StepLabel>
-                </Step>
-                <Step>
-                    <StepLabel>Payment</StepLabel>
-                </Step>
-            </Stepper>
-            {/* FORMIK */}
-            <Box>
-            <Formik
-            onSubmit={handleFormSubmit}
-            initialValues={initialValues}
-            validationSchema={checkoutSchema[activeStep]}
-            >
-                {({
-                    values,
-                    errors, 
-                    touched,
-                    handleBlur,
-                    handleChange,
-                    handleSubmit, 
-                    setFieldValue
-                })=> (
-                    <form onSubmit={handleSubmit}>
-                        {isFirstStep && (
-                            <Shipping 
-                            values={values}
-                            errors={errors}
-                            touched={touched}
-                            handleChange={handleChange}
-                            />
-                        )}
-                    </form>
-                )}
-
-                </Formik>
-            </Box>
-=======
             <Stepper activeStep={activeStep} sx={{ m: "20px 0"}} />
->>>>>>> 07ec17a5765bcc8d9f1002df654fd0b95daffed8
         </Box>
    )
 }

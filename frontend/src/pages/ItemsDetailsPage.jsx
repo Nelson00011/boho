@@ -86,7 +86,7 @@ return (
             <Typography variant="h3">{item?.attributes?.name}</Typography>
             <Typography>${item?.attributes?.price}</Typography>
             <Typography sx={{ mt: "20px" }}>
-              {item?.attributes?.longDescription}
+              {item?.attributes?.shortDescription}
             </Typography>
           </Box>
 
