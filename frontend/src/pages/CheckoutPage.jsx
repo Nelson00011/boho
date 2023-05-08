@@ -38,6 +38,7 @@ const initialValues = {
 
 //COMMENT YUP FORMIK FormCheck
 const checkoutSchema = [
+//COMMENT firstSTEPPER
     yup.object().shape({
         billingAddress: yup.object().shape({
             firstName: yup.string().required("required"),
@@ -83,6 +84,7 @@ const checkoutSchema = [
         }),
 
     }),
+//COMMENT: second Stepper
     yup.object.shape({
         email: yup.string().required("required"),
         phoneNumber: yup.string().required('required')
