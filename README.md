@@ -14,7 +14,7 @@
 
 ## Technology Stack
 - **Frontend/Client:** React.js, MUI, Redux, Formik, Yup, HTML5, CSS
-- **API:**: Stripe
+- **API:** Stripe
 - **Backend/Server:** Strapi.js, SQLite, Node.js,  tbd?
 
 ## Run Code (Environment)
