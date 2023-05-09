@@ -1,17 +1,12 @@
 //Pages
 import { useDispatch, useSelector } from "react-redux";
 import { Badge, Box, IconButton } from "@mui/material";
-import {
-  PersonOutline,
-  ShoppingBagOutlined,
-  MenuOutlined,
-  SearchOutlined,
-} from "@mui/icons-material";
+import { PersonOutline, ShoppingBagOutlined, MenuOutlined, SearchOutlined } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 //style
-import { shades } from "./../theme";
+import { shades } from "../theme";
 import classes from './NavBar.module.css';
-import { setIsCartOpen } from './../state';
+import { setIsCartOpen } from '../state';
 
 
 function NavBar (){

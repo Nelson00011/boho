@@ -45,7 +45,7 @@ async function getItem() {
     setLoadingItems(true)
     
     const items = await fetch(
-      `http://localhost:1337/api/items?filters[category][$eqi]=${item.attributes.category}&populate=image`,
+      `http://localhost:1337/api/items?filters[category][$eqi]=${item?.attributes?.category}&populate=image`,
       { method: "GET" }
     );
 

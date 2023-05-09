@@ -12,7 +12,7 @@
 ## Technology Stack
 - **Front-End:** React.js, MUI, Redux, Formik, Yup
 - **API:** tbd? 
-- **Back-End:** Strapi, Node.js, tbd?
+- **Back-End:** Strapi.js, SQLite, Node.js,  tbd?
 
 ## Run Code (Environment)
 

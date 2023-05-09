@@ -1,13 +1,13 @@
 //TODO: SubComponents, potential SWITCH STATEMENT/TERNARY
 import { useSelector } from "react-redux";
-import { Box, Stepper, Step, StepLabel } from "@mui/material";
+import { Box, Button, Stepper, Step, StepLabel } from "@mui/material";
 import { Formik } from "formik";
 import { useState } from "react";
 import * as yup from "yup";
-// import { shades } from "./../theme";
+import { shades } from "./../theme";
 //COMMENTS components
 import Shipping from "../components/Shipping";
-// import Payment from "../components/Payment";
+import Payment from "../components/Payment";
 
 
 //COMMENT Initial Value
@@ -99,7 +99,7 @@ function Checkout(){
     const isFirstStep = activeStep === 0;
     const isSecondStep = activeStep === 1;
 
-    const handleFormSubmit = async (value, actions) => {
+    const handleFormSubmit = async (values, actions) => {
         setActiveStep(activeStep + 1)
         //COMMENT: 
         if(isFirstStep && values.shippingAddress.isSameAddress){
@@ -113,9 +113,12 @@ function Checkout(){
           makePayment(values);
         }
 //TODO HERE 
+    actions.setTouch({});
+
+
     }
 
-//TODO
+//TODO HERE
     async function makePayment(values){
         //Strip Logic
     };
@@ -158,7 +161,39 @@ function Checkout(){
                   setFieldValue={setFieldValue}
                 />
               )}
-          
+            <Box display='flex' justifyContent='space-between' gap="50px">
+              {isSecondStep && (
+                <Button 
+                fullWidth
+                color="primary"
+                variant="contained"
+                sx={{
+                  backgroundColor: shades.primary[200],
+                  boxShadow: "none",
+                  color: "white",
+                  borderRadius: 0,
+                  padding: "15px 40px"
+                }}
+                onClick={()=> setActiveStep(activeStep - 1)}
+                >Back</Button>
+              )} 
+              <Button 
+                fullWidth
+                type="submit"
+                color="primary"
+                variant="contained"
+                sx={{
+                  backgroundColor: shades.primary[300],
+                  boxShadow: "none",
+                  color: "white",
+                  borderRadius: 0,
+                  padding: "15px 40px"
+                }}
+                onClick={()=> setActiveStep(activeStep + 1)}
+                >{isFirstStep ? "Next" : "Place Order"}</Button>
+
+
+            </Box>
             </form>
           )}
         </Formik>
