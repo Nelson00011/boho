@@ -13,9 +13,9 @@
 
 
 ## Technology Stack
-- **Front-End:** React.js, MUI, Redux, Formik, Yup, HTML5, CSS
+- **Frontend/Client:** React.js, MUI, Redux, Formik, Yup, HTML5, CSS
 - **API:**: Stripe
-- **Back-End:** Strapi.js, SQLite, Node.js,  tbd?
+- **Backend/Server:** Strapi.js, SQLite, Node.js,  tbd?
 
 ## Run Code (Environment)
 
@@ -27,7 +27,7 @@
 > git --version
 ```
 
-- Initial package.json & install dependenies:
+- Initial package.json & install dependenies(localhost:3000):
     - Must be `cd`'d into frontend/client for install
     - MUI, `react-router-dom`, redux, formik, etc... (see resources)
 ```
@@ -66,6 +66,8 @@ const items = await fetch(
 `http://localhost:1337/api/${grouping}`
 )
 ```
+--------------------------
+### Deployment
 
 ## Resources & Helpful Hints:
 - [Strapi](https://strapi.io/) Backend Applications
@@ -106,6 +108,7 @@ const items = await fetch(
 #### **helpful hint:** 
 - console log testing with `ctr-alt-l` 
 - CSS styles: clamp [here](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp)
+- Always Stay Positive & When in Doubt Double Check Permissions :)
 
 
 
