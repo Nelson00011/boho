@@ -95,18 +95,30 @@ const checkOutSchema = [
 //COMMENT actual page
 function Checkout(){
     const [activeStep, setActiveStep] = useState(0);
-    // const cart = useSelector((state) => state.cart.cart);
+    const cart = useSelector((state) => state.cart.cart);
     const isFirstStep = activeStep === 0;
-    // const isSecondStep = activeStep === 1;
+    const isSecondStep = activeStep === 1;
 
     const handleFormSubmit = async (value, actions) => {
         setActiveStep(activeStep + 1)
+        //COMMENT: 
+        if(isFirstStep && values.shippingAddress.isSameAddress){
+          actions.setFieldValue("shippingAddress",
+           {
+            ...values.billingAddress,
+            isSameAddress: true,
+           })
+        }
+        if(isSecondStep){
+          makePayment(values);
+        }
+//TODO HERE 
     }
 
 //TODO
-    // async function makePayment(values){
-    //     //Strip Logic
-    // };
+    async function makePayment(values){
+        //Strip Logic
+    };
 
     return (
     <Box width="80%" m="100px auto">
