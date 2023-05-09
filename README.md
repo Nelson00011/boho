@@ -1,17 +1,20 @@
 <h1 align="center">BoHo Ecommerce</h1>
 
 ## Description:
-**Boho Bag** is an ecommerce site that allows users to purchase Bohemian Styles: dresses, scarves, purses with different filtering options. The option to subscribe via email is provided for patrons of the site: 
-- Utilizes REACT.js  <insert example>
-- Redux is used <insert example>
+**Boho Bag** is an Ecommerce React.js app that allows users to purchase Bohemian Styles: dresses, scarves, purses with different filtering options. The option to subscribe to a Newletter is provided on the front page for interested patrons. 
+- Client side utilizes ***React.js*** & ***react-router-dom*** in combination with Material MUI create themes to provide cohesive structure. 
+- Server side uses ***Strapi.js*** (CMS) in combination with ***SQLite*** to provide database structure that ***React Redux*** interfaces with when communcating between client & server. 
+- ***Material UI**** in combination with traditional CSS is used for a cohesive design aesthetic. 
+
 - <insert example> Stripe (payment) & contact information. 
-- <insert example> Sendgrid Twilio Email Updates
-- <insert example> Strapi for backend function, content management system. 
+- <insert example> Sendgrid Twilio Email Updates to learn more about the company
+- <insert example> Stripe (payment) & contact information. 
+
 
 
 ## Technology Stack
 - **Front-End:** React.js, MUI, Redux, Formik, Yup
-- **API:** tbd? 
+- **API:**: Stripe
 - **Back-End:** Strapi.js, SQLite, Node.js,  tbd?
 
 ## Run Code (Environment)
@@ -24,7 +27,8 @@
 > git --version
 ```
 
-- Initial package.json & install dependencies:
+- Initial package.json & install dependenies:
+    - Must be `cd`'d into frontend/client for install
     - MUI, `react-router-dom`, redux, formik, etc... (see resources)
 ```
 > npx create-react-app <project name>
@@ -33,6 +37,7 @@
 > npm install --save react-router-dom
 > npm install react-redux @reduxjs/toolkit
 > npm install formik yup dotenv react-responsive-carousel
+> npm install --save @stripe/react-stripe-js @stripe/stripe-js
 > npm install bootstrap@5.3.0-alpha3
 ```
 - Test front-end once pages are generated (ctrl-c to exit):
@@ -68,12 +73,16 @@ const items = await fetch(
     - Admin Panel of Strapi `http://localhost:1337/admin`
     - Rest API info [here](https://docs.strapi.io/dev-docs/api/rest) & filter info [here](https://docs.strapi.io/dev-docs/api/rest/filters-locale-publication)
     - **helpful hint:** returns null if not defined, check image sizes in formats (*avoid thumbnails*)
-- [Stripe](https://stripe.com/?utm_campaign=paid_brand-US_Search_Brand_Stripe_Control-1803852691&utm_medium=cpc&utm_source=google&ad_content=604030746212&utm_term=stripe&utm_matchtype=p&utm_adposition=&utm_device=c&gclid=CjwKCAjwxr2iBhBJEiwAdXECw9BcpcbVI09UivWmp_SZ3W3uapO6fPcNs-CDILBhvUHbqb-q9eeMwhoCjDsQAvD_BwE) for Financial payment infrastructure. 
+- [Stripe](https://stripe.com/?utm_campaign=paid_brand-US_Search_Brand_Stripe_Control-1803852691&utm_medium=cpc&utm_source=google&ad_content=604030746212&utm_term=stripe&utm_matchtype=p&utm_adposition=&utm_device=c&gclid=CjwKCAjwxr2iBhBJEiwAdXECw9BcpcbVI09UivWmp_SZ3W3uapO6fPcNs-CDILBhvUHbqb-q9eeMwhoCjDsQAvD_BwE) for Financial payment System & Install [here](https://stripe.com/docs/stripe-js/react)
+    ```
+    npm install --save @stripe/react-stripe-js @stripe/stripe-js
+    ```
 - **[Formik](https://formik.org/)** for Pre-built React Forms.
     - Installation & [docs](https://formik.org/docs/overview#installation) with [video](https://www.youtube.com/watch?v=oiNtnehlaTo)
     - **[Yup](https://www.npmjs.com/package/yup)** Object schema validation [here](https://formik.org/docs/guides/validation)
-- [React](https://react.dev/) components
-    - React responsive [Carousel](https://www.npmjs.com/package/react-responsive-carousel)
+
+
+#### **style:** 
 - **[Material UI CORE](https://mui.com/)** React UI LIBRARY *great for standardizing projects*
     - MUI Core installation [here](https://www.npmjs.com/package/@mui/material) & [here](https://mui.com/material-ui/getting-started/installation/)
     - MUI template pages [here](https://mui.com/material-ui/getting-started/templates/)
@@ -88,8 +97,11 @@ const items = await fetch(
     - Additional fun in grid-template-columns [here](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns)
     - MUI react-tab [here](https://mui.com/material-ui/react-tabs/) (*avoid scrolling option*)
     - Bootstraps Designs [here](https://getbootstrap.com/)
+- [React](https://react.dev/) components
+    - React responsive [Carousel](https://www.npmjs.com/package/react-responsive-carousel)
 - Filler Text [typographic](https://generator.lorem-ipsum.info/)
     - Lorem Ipsum 
+- Google Fonts [here](https://fonts.google.com/)
 
 #### **helpful hint:** 
 - console log testing with `ctr-alt-l` 
@@ -97,14 +109,17 @@ const items = await fetch(
 
 
 
-## TODO stx:
-Future Structure:
-- Clothing Page, Accessories: Scarves, Jewelry, etc...
-- ItemDetails: Reviews to be Iterated through,  Carousel for Related Products(set cap to higher than 4 items), Description Justify Text(formate may be better that way?), previous next buttons based on current params (home at end or infinite loop?), WishList has size/color options to differentiation between items. 
+
+### TODO stx:
+Future Structure (stx):
+- PAGES: Clothing Page, Accessories: Scarves, Jewelry, etc...
+    - Terms & Conditions
+    - Privacy Page
+    - userAuth/Login Page (firebase <3)
+- ItemDetails: Reviews to be Iterated through (component < reviews >),  Carousel for Related Products(set cap to higher than 4 items), Description Justify Text(formate may be better that way?), previous next buttons based on current params (home at end or infinite loop?), WishList has size/color options to differentiation between items. 
 - Item Component: image changes slightly on hover to new image? do i want to find new image? 
-- Cart: tax by state? 
 - Sendgrid Twilio server for subscription for Ecommerce site & Serial Newsletters
 - MUI sign-up/login page based on the template from [here](https://mui.com/store/sign-in/) w/Firebase
-- ACTUALLY LIST BAGS On shopping site
+- WISHLIST: for logged in users. 
 - Primary Colors: Green/Blue Bohemian themes. 
-- Add Validation to FORM requirements. 
+- HomePage: functionality to Holday Sale item (link to new items only, etc..)Add Validation to FORM requirements. 
