@@ -4,7 +4,7 @@
 **Boho Bag** is an Ecommerce React.js app that allows users to purchase Bohemian Styles: dresses, scarves, purses with different filtering options. The option to subscribe to a Newletter is provided on the front page for interested patrons. 
 - Client side utilizes ***React.js*** & ***react-router-dom*** in combination with Material MUI create themes to provide cohesive structure. 
 - Server side uses ***Strapi.js*** (CMS) in combination with ***SQLite*** to provide database structure that ***React Redux*** interfaces with when communcating between client & server. 
-- ***Material UI**** in combination with traditional CSS is used for a cohesive design aesthetic. 
+- ***Material UI*** in combination with traditional CSS is used for a cohesive design aesthetic. 
 
 - <insert example> Stripe (payment) & contact information. 
 - <insert example> Sendgrid Twilio Email Updates to learn more about the company
@@ -13,7 +13,7 @@
 
 
 ## Technology Stack
-- **Front-End:** React.js, MUI, Redux, Formik, Yup
+- **Front-End:** React.js, MUI, Redux, Formik, Yup, HTML5, CSS
 - **API:**: Stripe
 - **Back-End:** Strapi.js, SQLite, Node.js,  tbd?
 
