@@ -14,7 +14,7 @@
 
 ## Technology Stack
 - **Frontend/Client:** React.js, MUI, Redux, Formik, Yup, HTML5, CSS
-- **API:** Stripe
+- **API:** Stripe, Strapi.js
 - **Backend/Server:** Strapi.js, SQLite, Node.js,  tbd?
 
 ## Run Code (Environment)
@@ -47,18 +47,21 @@
 
 ### Back-End Helpful Hints (Node.js/Strapi)
 - Initial package.json & install dependencies:
+    - Must be `cd`'d into backend/server for install
 ```
 > npx create-strapi-app@latest <project name>
 > cd <project name>
+> npm install stripe
 ```
-- Add to Strapi Database generated (ctrl-c to exit):
+- Strapi Database generated (ctrl-c to exit):
 ```
 > npm run develop
 ```
-- **Avoid** *npm run start* and use the `npm run develop`. Allow server to restart with each edit (see resources)
-- **Content-Type Builder**: Item entry
-- **Media Library**: upload photos
-- **Permissions**: Settings > Roles > Public 
+- **Avoid** *npm run start* and use the `npm run develop`. 
+- Allow server to restart with each edit (see resources): 
+    - **Content-Type Builder**: Item entry
+    - **Media Library**: upload photos
+    - **Permissions**: Settings > Roles > Public 
 - In frontend fetch `item` from backend (*localhost:1337*):
 ```
 const grouping = "items"
@@ -74,7 +77,7 @@ const items = await fetch(
     - Quick Start [here](https://docs.strapi.io/dev-docs/quick-start)
     - Admin Panel of Strapi `http://localhost:1337/admin`
     - Rest API info [here](https://docs.strapi.io/dev-docs/api/rest) & filter info [here](https://docs.strapi.io/dev-docs/api/rest/filters-locale-publication)
-    - **helpful hint:** returns null if not defined, check image sizes in formats (*avoid thumbnails*)
+    - **helpful hint:** returns null if not defined, check image sizes in formats (*avoid thumbnails*) & `?.` help with unknown. 
 - [Stripe](https://stripe.com/?utm_campaign=paid_brand-US_Search_Brand_Stripe_Control-1803852691&utm_medium=cpc&utm_source=google&ad_content=604030746212&utm_term=stripe&utm_matchtype=p&utm_adposition=&utm_device=c&gclid=CjwKCAjwxr2iBhBJEiwAdXECw9BcpcbVI09UivWmp_SZ3W3uapO6fPcNs-CDILBhvUHbqb-q9eeMwhoCjDsQAvD_BwE) for Financial payment System & Install [here](https://stripe.com/docs/stripe-js/react)
     ```
     npm install --save @stripe/react-stripe-js @stripe/stripe-js
@@ -98,7 +101,7 @@ const items = await fetch(
     - MUI with CSS Modules style library [here](https://mui.com/material-ui/guides/interoperability/)
     - Additional fun in grid-template-columns [here](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns)
     - MUI react-tab [here](https://mui.com/material-ui/react-tabs/) (*avoid scrolling option*)
-    - Bootstraps Designs [here](https://getbootstrap.com/)
+- Bootstraps Designs [here](https://getbootstrap.com/)
 - [React](https://react.dev/) components
     - React responsive [Carousel](https://www.npmjs.com/package/react-responsive-carousel)
 - Filler Text [typographic](https://generator.lorem-ipsum.info/)
