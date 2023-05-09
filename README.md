@@ -102,9 +102,9 @@ Future Structure:
 - Clothing Page, Accessories: Scarves, Jewelry, etc...
 - ItemDetails: Reviews to be Iterated through,  Carousel for Related Products(set cap to higher than 4 items), Description Justify Text(formate may be better that way?), previous next buttons based on current params (home at end or infinite loop?), WishList has size/color options to differentiation between items. 
 - Item Component: image changes slightly on hover to new image? do i want to find new image? 
-- Cart: tax by state. 
+- Cart: tax by state? 
 - Sendgrid Twilio server for subscription for Ecommerce site & Serial Newsletters
-- MUI User page? 
+- MUI sign-up/login page based on the template from [here](https://mui.com/store/sign-in/) w/Firebase
 - ACTUALLY LIST BAGS On shopping site
 - Primary Colors: Green/Blue Bohemian themes. 
 - Add Validation to FORM requirements. 
