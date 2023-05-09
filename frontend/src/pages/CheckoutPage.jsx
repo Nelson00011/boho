@@ -5,9 +5,15 @@ import { Formik } from "formik";
 import { useState } from "react";
 import * as yup from "yup";
 import { shades } from "./../theme";
+//COMMENT payment info
+import { loadStripe } from '@stripe/stripe-js';
 //COMMENTS components
 import Shipping from "../components/Shipping";
 import Payment from "../components/Payment";
+
+const stripePromise = loadStripe(
+  "pk_test_51N5tqTA59RZSQVLPMVtEWIdwXE4HVfhtsy3ItLkQEaV5sy6eIlDPXXcyPmxFwYxfbYlAEKo8oHZBEfdJtpknHECe00Fsb3Y8pt"
+);
 
 
 //COMMENT Initial Value
@@ -112,15 +118,32 @@ function Checkout(){
         if(isSecondStep){
           makePayment(values);
         }
-//TODO HERE 
+
     actions.setTouch({});
-
-
     }
 
 //TODO HERE
     async function makePayment(values){
-        //Strip Logic
+        const stripe = await stripePromise;
+        const requestBody = {
+          userName: [values.firstName, values.lastName].join(" "),
+          email: values.email,
+          products: cart.map(({ id, count }) => ({
+            id,
+            count, 
+          }))
+        };
+
+        const response = await fetch('http://localhost:1337/api/orders', {
+          method: "POST",
+          headers: { "Content-Type" : 'application/json'},
+          body: JSON.stringify(requestBody)
+        });
+
+        const session = await response.json();
+        await stripe.redirectToCheckout({
+          sessionId: session.id,
+        });
     };
 
     return (

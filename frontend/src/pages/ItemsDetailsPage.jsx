@@ -28,6 +28,7 @@ const handleChange = (event, newValue) => {
 
 //COMMENT: Item Detail
 async function getItem() {
+    setLoadingItem(true)
     const items = await fetch(
         `http://localhost:1337/api/items/${itemId}?populate=image`,
       { method: "GET" }
@@ -45,7 +46,7 @@ async function getItem() {
     setLoadingItems(true)
     
     const items = await fetch(
-      `http://localhost:1337/api/items?filters[category][$eqi]=${item?.attributes?.category}&populate=image`,
+      `http://localhost:1337/api/items?filters[category][$eqi]=${item.attributes?.category}&populate=image`,
       { method: "GET" }
     );
 
@@ -60,8 +61,11 @@ async function getItem() {
 
   useEffect(()=> {
     getItem();
+  }, [itemId])
+
+  useEffect(()=>{
     getItems();
-  }, [itemId, loadingItem])
+  }, [item])
 
 
 
@@ -147,6 +151,7 @@ return (
             mt="20px"
             display="flex"
             flexWrap="wrap"
+            rowGap="20px"
             columnGap="1.33%"
             justifyContent='space-between'
             >
