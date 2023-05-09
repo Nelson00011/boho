@@ -1,12 +1,13 @@
-//TODO: SubComponents, potential <switch statement for STEP>
+//TODO: SubComponents, potential SWITCH STATEMENT/TERNARY
 import { useSelector } from "react-redux";
-import { Box, Button, Stepper, Step, StepLabel } from "@mui/material";
+import { Box, Stepper, Step, StepLabel } from "@mui/material";
 import { Formik } from "formik";
 import { useState } from "react";
 import * as yup from "yup";
-import { shades } from "./../theme";
+// import { shades } from "./../theme";
 //COMMENTS components
 import Shipping from "../components/Shipping";
+// import Payment from "../components/Payment";
 
 
 //COMMENT Initial Value
@@ -37,7 +38,7 @@ const initialValues = {
 }
 
 //COMMENT YUP FORMIK FormCheck
-const checkoutSchema = [
+const checkOutSchema = [
 //COMMENT firstSTEPPER
     yup.object().shape({
         billingAddress: yup.object().shape({
@@ -94,18 +95,18 @@ const checkoutSchema = [
 //COMMENT actual page
 function Checkout(){
     const [activeStep, setActiveStep] = useState(0);
-    const cart = useSelector((state) => state.cart.cart);
+    // const cart = useSelector((state) => state.cart.cart);
     const isFirstStep = activeStep === 0;
-    const isSecondStep = activeStep === 1;
+    // const isSecondStep = activeStep === 1;
 
     const handleFormSubmit = async (value, actions) => {
         setActiveStep(activeStep + 1)
     }
 
 //TODO
-    async function makePayment(values){
-        return null
-    };
+    // async function makePayment(values){
+    //     //Strip Logic
+    // };
 
     return (
     <Box width="80%" m="100px auto">
@@ -119,11 +120,11 @@ function Checkout(){
       </Stepper>
 
       <Box>
-        {/* FORMIK */}
+       
         <Formik
           onSubmit={handleFormSubmit}
           initialValues={initialValues}
-          validationSchema={checkoutSchema[activeStep]}
+          validationSchema={checkOutSchema[activeStep]}
         >
           {({
             values,
@@ -145,50 +146,7 @@ function Checkout(){
                   setFieldValue={setFieldValue}
                 />
               )}
-              {isSecondStep && (
-                <Payment
-                  values={values}
-                  errors={errors}
-                  touched={touched}
-                  handleBlur={handleBlur}
-                  handleChange={handleChange}
-                  setFieldValue={setFieldValue}
-                />
-              )}
-              <Box display="flex" justifyContent="space-between" gap="50px">
-                {!isFirstStep && (
-                  <Button
-                    fullWidth
-                    color="primary"
-                    variant="contained"
-                    sx={{
-                      backgroundColor: shades.primary[200],
-                      boxShadow: "none",
-                      color: "white",
-                      borderRadius: 0,
-                      padding: "15px 40px",
-                    }}
-                    onClick={() => setActiveStep(activeStep - 1)}
-                  >
-                    Back
-                  </Button>
-                )}
-                <Button
-                  fullWidth
-                  type="submit"
-                  color="primary"
-                  variant="contained"
-                  sx={{
-                    backgroundColor: shades.primary[400],
-                    boxShadow: "none",
-                    color: "white",
-                    borderRadius: 0,
-                    padding: "15px 40px",
-                  }}
-                >
-                  {!isSecondStep ? "Next" : "Place Order"}
-                </Button>
-              </Box>
+          
             </form>
           )}
         </Formik>
