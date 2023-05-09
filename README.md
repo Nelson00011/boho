@@ -78,7 +78,7 @@ const items = await fetch(
     - Admin Panel of Strapi `http://localhost:1337/admin`
     - Rest API info [here](https://docs.strapi.io/dev-docs/api/rest) & filter info [here](https://docs.strapi.io/dev-docs/api/rest/filters-locale-publication)
     - **helpful hint:** returns null if not defined, check image sizes in formats (*avoid thumbnails*) & `?.` help with unknown. 
-- [Stripe](https://stripe.com/?utm_campaign=paid_brand-US_Search_Brand_Stripe_Control-1803852691&utm_medium=cpc&utm_source=google&ad_content=604030746212&utm_term=stripe&utm_matchtype=p&utm_adposition=&utm_device=c&gclid=CjwKCAjwxr2iBhBJEiwAdXECw9BcpcbVI09UivWmp_SZ3W3uapO6fPcNs-CDILBhvUHbqb-q9eeMwhoCjDsQAvD_BwE) for Financial payment System & Install [here](https://stripe.com/docs/stripe-js/react)
+- [Stripe](https://stripe.com/?utm_campaign=paid_brand-US_Search_Brand_Stripe_Control-1803852691&utm_medium=cpc&utm_source=google&ad_content=604030746212&utm_term=stripe&utm_matchtype=p&utm_adposition=&utm_device=c&gclid=CjwKCAjwxr2iBhBJEiwAdXECw9BcpcbVI09UivWmp_SZ3W3uapO6fPcNs-CDILBhvUHbqb-q9eeMwhoCjDsQAvD_BwE) for Financial payment System, Prebuilt Checkout [Page](https://stripe.com/docs/checkout/quickstart?client=react) (also works w/ Next.js) & Install [here](https://stripe.com/docs/stripe-js/react)
     ```
     npm install --save @stripe/react-stripe-js @stripe/stripe-js
     ```
