@@ -86,7 +86,7 @@ const checkOutSchema = [
 
     }),
 //COMMENT: second Stepper
-    yup.object.shape({
+    yup.object().shape({
         email: yup.string().required("required"),
         phoneNumber: yup.string().required('required')
     })

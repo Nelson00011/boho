@@ -43,6 +43,7 @@ async function getItem() {
   //COMMENT: sorts by category & filters Main Item 
   async function getItems() {
     setLoadingItems(true)
+    
     const items = await fetch(
       `http://localhost:1337/api/items?filters[category][$eqi]=${item.attributes.category}&populate=image`,
       { method: "GET" }
@@ -52,6 +53,7 @@ async function getItem() {
     const newItems = itemsJSON.data.filter(
     (content) => content.id != itemId
     )
+
     setItems(newItems.slice(0,4));
     setLoadingItems(false)
   }
