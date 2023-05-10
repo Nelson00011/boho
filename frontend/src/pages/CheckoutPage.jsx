@@ -223,15 +223,15 @@ function Checkout(){
                     borderRadius: 0,
                     padding: "15px 40px",
                   }}
-                  onClick={() => setActiveStep(activeStep + 1)}
+                  onClick={isFirstStep || isSecondStep ? () => setActiveStep(activeStep + 1) : () => setActiveStep(2)}
                 >
-                  {!isSecondStep ? "Next" : "Place Order"}
+                  {isFirstStep || isSecondStep  ? "Next" : "Place Order"}
                 </Button>
               </Box>
             </form>
           )}
         </Formik>
-      </Box>
+      </Box> 
     </Box>
   );
 }

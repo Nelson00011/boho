@@ -2,11 +2,13 @@
 
 ![image](https://github.com/Nelson00011/boho/assets/112737682/b0488d96-1b93-4474-a2a5-df39036ffdf6)
 
+
 ## Description:
 **Boho Bag** is an Ecommerce React.js app that allows users to purchase Bohemian Styles: dresses, scarves, purses with different filtering options. The option to subscribe to a Newletter is provided on the front page for interested patrons. 
 - Client side utilizes ***React.js*** & ***react-router-dom*** in combination with Material MUI create themes to provide cohesive structure. 
 - Server side uses ***Strapi.js*** (CMS) in combination with ***SQLite*** to provide database structure that ***React Redux*** interfaces with when communcating between client & server. 
 - ***Material UI*** in combination with traditional CSS is used for a cohesive design aesthetic. 
+- 
 
 - <insert example> Stripe (payment) & contact information. 
 - <insert example> Sendgrid Twilio Email Updates to learn more about the company
@@ -18,6 +20,8 @@
 
 - Item Detail Page loaded from Strapi/SQlite backend
 ![image](https://github.com/Nelson00011/boho/assets/112737682/e2450811-014d-4d4f-86f1-43d5fc076f1c)
+
+- 
 
 ## Technology Stack
 - **Frontend/Client:** React.js, MUI, Redux, Formik, Yup, HTML5, CSS
@@ -123,7 +127,9 @@ const items = await fetch(
 - CSS styles: clamp [here](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp)
 - Always Stay Positive & When in Doubt Double Check Permissions :)
 
-
+## Additional Images:
+- Homepage Footer:
+![image](https://github.com/Nelson00011/boho/assets/112737682/45fd45d8-5ecc-4fd8-8177-8a74e6da52ca)
 
 
 <!-- 

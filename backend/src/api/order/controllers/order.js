@@ -11,12 +11,10 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
     async create(ctx) {
       const { products, userName, email } = ctx.request.body;
       try {
-        // retrieve item information
+        //COMMENT: retrieve item information
         const lineItems = await Promise.all(
           products.map(async (product) => {
-            const item = await strapi
-              .service("api::item.item")
-              .findOne(product.id);
+            const item = await strapi.service("api::item.item").findOne(product.id);
   
             return {
               price_data: {
@@ -31,22 +29,22 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
           })
         );
   
-        // create a stripe session
+        //COMMENT: create a stripe session
         const session = await stripe.checkout.sessions.create({
           payment_method_types: ["card"],
           customer_email: email,
           mode: "payment",
           success_url: "http://localhost:3000/checkout/success",
-          cancel_url: "http://localhost:3000/checkout",
+          cancel_url: "http://localhost:3000",
           line_items: lineItems,
         });
   
-        // create the item
-        await strapi
-          .service("api::order.order")
-          .create({ data: { userName, products, stripeSessionId: session.id } });
+        //COMMENT: create the item
+        await strapi.service("api::order.order").create({ 
+          data: { userName, products, stripeSessionId: session.id } 
+        });
   
-        // return the session id
+        //COMMENT: return the session id
         return { id: session.id };
       } catch (error) {
         ctx.response.status = 500;
