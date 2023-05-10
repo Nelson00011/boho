@@ -1,4 +1,5 @@
 <h1 align="center">BoHo Ecommerce</h1>
+![image](https://github.com/Nelson00011/boho/assets/112737682/b0488d96-1b93-4474-a2a5-df39036ffdf6)
 
 ## Description:
 **Boho Bag** is an Ecommerce React.js app that allows users to purchase Bohemian Styles: dresses, scarves, purses with different filtering options. The option to subscribe to a Newletter is provided on the front page for interested patrons. 
@@ -11,7 +12,7 @@
 - <insert example> Stripe (payment) & contact information. 
 
 # Screen Shots:
-- Homepage with react-carousal
+- Homepage with react-carousal, MUI tabs, Strapi/SQLite loaded Items
 ![image](https://github.com/Nelson00011/boho/assets/112737682/ad72dae1-9474-4a71-b24c-175bf8341bb0)
 
 - Item Detail Page loaded from Strapi/SQlite backend
