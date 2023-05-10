@@ -10,7 +10,12 @@
 - <insert example> Sendgrid Twilio Email Updates to learn more about the company
 - <insert example> Stripe (payment) & contact information. 
 
+# Screen Shots:
+- Homepage with react-carousal
+![image](https://github.com/Nelson00011/boho/assets/112737682/ad72dae1-9474-4a71-b24c-175bf8341bb0)
 
+- Item Detail Page loaded from Strapi/SQlite backend
+![image](https://github.com/Nelson00011/boho/assets/112737682/e2450811-014d-4d4f-86f1-43d5fc076f1c)
 
 ## Technology Stack
 - **Frontend/Client:** React.js, MUI, Redux, Formik, Yup, HTML5, CSS
@@ -38,7 +43,6 @@
 > npm install react-redux @reduxjs/toolkit
 > npm install formik yup dotenv react-responsive-carousel
 > npm install --save @stripe/react-stripe-js @stripe/stripe-js
-> npm install bootstrap@5.3.0-alpha3
 ```
 - Test front-end once pages are generated (ctrl-c to exit):
 ```
@@ -106,7 +110,6 @@ const items = await fetch(
     - MUI with CSS Modules style library [here](https://mui.com/material-ui/guides/interoperability/)
     - Additional fun in grid-template-columns [here](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns)
     - MUI react-tab [here](https://mui.com/material-ui/react-tabs/) (*avoid scrolling option*)
-- Bootstraps Designs [here](https://getbootstrap.com/)
 - [React](https://react.dev/) components
     - React responsive [Carousel](https://www.npmjs.com/package/react-responsive-carousel)
 - Filler Text [typographic](https://generator.lorem-ipsum.info/)
@@ -129,7 +132,10 @@ Future Structure (stx):
     - Privacy Page
     - userAuth/Login Page (firebase <3)
     - Confirmation vs Failure Page.
-- ItemDetails: Reviews to be Iterated through (component < reviews >),  Carousel for Related Products(set cap to higher than 4 items) previous next buttons based on current params (home at end or infinite loop?), WishList has size/color options to differentiation between items. 
+- ItemDetails: 
+    - Reviews to be Iterated through (component < reviews >),  
+    - Carousel for Related Products(set cap to higher than 4 items) previous next buttons based on current params (home at end or infinite loop?), 
+    - WishList has to change color of heart & add to user profile
 - Item Component: image changes slightly on hover to new image? do i want to find new image? 
 - Sendgrid Twilio server for subscription for Ecommerce site & Serial Newsletters
 - MUI sign-up/login page based on the template from [here](https://mui.com/store/sign-in/) w/Firebase
