@@ -158,8 +158,7 @@ function Checkout(){
       </Stepper>
 
       <Box>
-       
-        <Formik
+      <Formik
           onSubmit={handleFormSubmit}
           initialValues={initialValues}
           validationSchema={checkOutSchema[activeStep]}
@@ -184,39 +183,51 @@ function Checkout(){
                   setFieldValue={setFieldValue}
                 />
               )}
-            <Box display='flex' justifyContent='space-between' gap="50px">
               {isSecondStep && (
-                <Button 
-                fullWidth
-                color="primary"
-                variant="contained"
-                sx={{
-                  backgroundColor: shades.primary[200],
-                  boxShadow: "none",
-                  color: "white",
-                  borderRadius: 0,
-                  padding: "15px 40px"
-                }}
-                onClick={()=> setActiveStep(activeStep - 1)}
-                >Back</Button>
-              )} 
-              <Button 
-                fullWidth
-                type="submit"
-                color="primary"
-                variant="contained"
-                sx={{
-                  backgroundColor: shades.primary[300],
-                  boxShadow: "none",
-                  color: "white",
-                  borderRadius: 0,
-                  padding: "15px 40px"
-                }}
-                onClick={()=> setActiveStep(activeStep + 1)}
-                >{isFirstStep ? "Next" : "Place Order"}</Button>
-
-
-            </Box>
+                <Payment
+                  values={values}
+                  errors={errors}
+                  touched={touched}
+                  handleBlur={handleBlur}
+                  handleChange={handleChange}
+                  setFieldValue={setFieldValue}
+                />
+              )}
+              <Box display="flex" justifyContent="space-between" gap="50px">
+                {!isFirstStep && (
+                  <Button
+                    fullWidth
+                    color="primary"
+                    variant="contained"
+                    sx={{
+                      backgroundColor: shades.primary[200],
+                      boxShadow: "none",
+                      color: "white",
+                      borderRadius: 0,
+                      padding: "15px 40px",
+                    }}
+                    onClick={() => setActiveStep(activeStep - 1)}
+                  >
+                    Back
+                  </Button>
+                )}
+                <Button
+                  fullWidth
+                  type="submit"
+                  color="primary"
+                  variant="contained"
+                  sx={{
+                    backgroundColor: shades.primary[400],
+                    boxShadow: "none",
+                    color: "white",
+                    borderRadius: 0,
+                    padding: "15px 40px",
+                  }}
+                  onClick={() => setActiveStep(activeStep + 1)}
+                >
+                  {!isSecondStep ? "Next" : "Place Order"}
+                </Button>
+              </Box>
             </form>
           )}
         </Formik>

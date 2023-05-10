@@ -82,6 +82,7 @@ const items = await fetch(
     ```
     npm install --save @stripe/react-stripe-js @stripe/stripe-js
     ```
+    - API Session [info](https://stripe.com/docs/api/checkout/sessions/create)
 - **[Formik](https://formik.org/)** for Pre-built React Forms.
     - Installation & [docs](https://formik.org/docs/overview#installation) with [video](https://www.youtube.com/watch?v=oiNtnehlaTo)
     - **[Yup](https://www.npmjs.com/package/yup)** Object schema validation [here](https://formik.org/docs/guides/validation)
