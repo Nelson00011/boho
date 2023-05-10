@@ -194,7 +194,7 @@ function Checkout(){
                 />
               )}
               <Box display="flex" justifyContent="space-between" gap="50px">
-                {!isFirstStep && (
+                {isSecondStep && (
                   <Button
                     fullWidth
                     color="primary"
