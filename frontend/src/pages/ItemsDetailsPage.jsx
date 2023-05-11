@@ -145,10 +145,10 @@ return (
             {tabValue === 'description' && (<div>{item?.attributes?.longDescription}</div>)}
 {/* TODO review component*/}
 
-        {tabValue === 'reviews' && reviews.map((review, index)=> (
+        {tabValue === 'reviews' && reviews.slice(0,3).map((review, index)=> (
         <Review review={review} index={index} key={`review-${review.id}`}/>
-      ))
-            }
+      ))}
+
         </Box>
         {/* SIMILAR CATEGORY ITEMS */}
         <Box mt="50px" width="100%">

@@ -16,7 +16,10 @@ const rating = review.attributes.rating
             <Typography component="legend" variant="h4" >Rating</Typography>
             <Rating name="read-only" value={rating} size="medium" textAlign="center" readOnly />
             </Box>
-            <div>{description}</div>
+            <Box textAlign="center" >
+            <div>"<em>{description}</em>"</div>
+            <hr/>
+            </Box>
         </Box>
     
     )
