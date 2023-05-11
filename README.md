@@ -9,6 +9,8 @@
 - ***Stripe*** payment used in combination with Matieral UI stepper checkout form. ***Material UI*** in combination with traditional CSS is used for a cohesive design aesthetic. 
 
 # Screen Shots:
+<p align="center">Please reference the screenshot folder for more available images</p>
+
 - Homepage with react-carousal, MUI tabs, Strapi/SQLite database for loaded items:
 
 ![image](https://github.com/Nelson00011/boho/assets/112737682/ad72dae1-9474-4a71-b24c-175bf8341bb0)
