@@ -1,7 +1,6 @@
 <h1 align="center">BoHo Ecommerce</h1>
 
-![image](https://github.com/Nelson00011/boho/assets/112737682/b0488d96-1b93-4474-a2a5-df39036ffdf6)
-
+![itemDetailPage-2](https://github.com/Nelson00011/boho/assets/112737682/fbc2fd6d-c00a-4677-9140-851e5f0c6528)
 
 ## Description:
 **Boho Bag** is an Ecommerce ***React.js*** app that allows users to purchase Bohemian Styles: dresses, scarves, purses with different filtering options. The option to subscribe to a Newletter is provided on the front page for interested patrons. 
