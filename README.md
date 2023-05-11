@@ -8,25 +8,22 @@
 - Client side utilizes ***React.js*** & ***react-router-dom*** in combination with Material MUI create themes to provide cohesive structure. 
 - Server side uses ***Strapi.js*** (CMS) in combination with ***SQLite*** to provide database structure that ***React Redux*** interfaces with when communcating between client & server. 
 - ***Material UI*** in combination with traditional CSS is used for a cohesive design aesthetic. 
-- 
-
-- <insert example> Stripe (payment) & contact information. 
-- <insert example> Sendgrid Twilio Email Updates to learn more about the company
-- <insert example> Stripe (payment) & contact information. 
+- ***Stripe*** payment used in combination with Matieral UI stepper checkout form. 
 
 # Screen Shots:
-- Homepage with react-carousal, MUI tabs, Strapi/SQLite loaded Items
+- Homepage with react-carousal, MUI tabs, Strapi/SQLite database for loaded items:
+
 ![image](https://github.com/Nelson00011/boho/assets/112737682/ad72dae1-9474-4a71-b24c-175bf8341bb0)
 
-- Item Detail Page loaded from Strapi/SQlite backend
-![image](https://github.com/Nelson00011/boho/assets/112737682/e2450811-014d-4d4f-86f1-43d5fc076f1c)
+- Stripe Payment Checkout with Material UI stepper: 
 
+![CheckoutPage-1](https://github.com/Nelson00011/boho/assets/112737682/89c467c7-7982-45a2-a7ab-e5fb36f88672)
 - 
 
 ## Technology Stack
 - **Frontend/Client:** React.js, MUI, Redux, Formik, Yup, HTML5, CSS
 - **API:** Stripe, Strapi.js
-- **Backend/Server:** Strapi.js, SQLite, Node.js,  tbd?
+- **Backend/Server:** Strapi.js, SQLite, Node.js,  
 
 ## Run Code (Environment)
 
@@ -128,10 +125,6 @@ const items = await fetch(
 - console log testing with `ctr-alt-l` 
 - CSS styles: clamp [here](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp)
 - Always Stay Positive & Triple Check Permissions :)
-
-## Additional Images:
-- Homepage Footer:
-![image](https://github.com/Nelson00011/boho/assets/112737682/45fd45d8-5ecc-4fd8-8177-8a74e6da52ca)
 
 
 <!-- 
