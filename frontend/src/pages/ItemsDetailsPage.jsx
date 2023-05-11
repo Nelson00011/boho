@@ -9,6 +9,7 @@ import { shades } from "./../theme";
 import { addToCart } from "../state";
 import { useParams } from "react-router-dom";
 import Item from "../components/Item";
+import Review from "../components/Review";
 
 
 function ItemsDetails(){
@@ -18,6 +19,7 @@ const [tabValue, setTabValue] = useState("description");
 const [count, setCount] = useState(1);
 const [item, setItem] = useState({});
 const [items, setItems] = useState([]);
+const [reviews, setReviews] = useState([])
 const [loadingItem, setLoadingItem] = useState(true);
 const [loadingItems, setLoadingItems] = useState(true);
 
@@ -30,14 +32,14 @@ const handleChange = (event, newValue) => {
 async function getItem() {
     setLoadingItem(true)
     const items = await fetch(
-        `http://localhost:1337/api/items/${itemId}?populate=image`,
+        `http://localhost:1337/api/items/${itemId}?populate=image&populate=reviews`,
       { method: "GET" }
     );
     const itemsJSON = await items.json();
 
     setItem(itemsJSON.data);
     console.log("TCL: getItem -> itemsJSON.data", itemsJSON.data)
-    console.log("TCL: ItemsDetails -> item", item)
+    // console.log("TCL: ItemsDetails -> item", item)
     setLoadingItem(false)
   }
 
@@ -49,13 +51,14 @@ async function getItem() {
       `http://localhost:1337/api/items?filters[category][$eqi]=${item.attributes?.category}&populate=image`,
       { method: "GET" }
     );
-
+    
     const itemsJSON = await items.json();
     const newItems = itemsJSON.data.filter(
     (content) => content.id != itemId
     )
 
     setItems(newItems.slice(0,4));
+    setReviews(item?.attributes?.reviews?.data)
     setLoadingItems(false)
   }
 
@@ -140,7 +143,12 @@ return (
         </Box>
         <Box display='flex' flexWrap="wrap" gap="15px">
             {tabValue === 'description' && (<div>{item?.attributes?.longDescription}</div>)}
-            {tabValue === 'reviews' && (<div>REVIEWS</div>)}
+{/* TODO review component*/}
+
+        {tabValue === 'reviews' && reviews.map((review, index)=> (
+        <Review review={review} index={index} key={`review-${review.id}`}/>
+      ))
+            }
         </Box>
         {/* SIMILAR CATEGORY ITEMS */}
         <Box mt="50px" width="100%">

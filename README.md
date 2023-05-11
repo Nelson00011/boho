@@ -86,8 +86,10 @@ const items = await fetch(
 - [Strapi](https://strapi.io/) Backend Applications
     - Quick Start [here](https://docs.strapi.io/dev-docs/quick-start)
     - Admin Panel of Strapi `http://localhost:1337/admin`
-    - Rest API info [here](https://docs.strapi.io/dev-docs/api/rest) & filter info [here](https://docs.strapi.io/dev-docs/api/rest/filters-locale-publication)
+    - Video Help found [here](https://www.youtube.com/watch?v=gB8HRpIAE3o)
+    - Rest API [info](https://docs.strapi.io/dev-docs/api/rest)/populate [here](https://docs.strapi.io/dev-docs/api/rest/populate-select) & filter [info](https://docs.strapi.io/dev-docs/api/rest/filters-locale-publication)
     - **helpful hint:** returns null if not defined, check image sizes in formats (*avoid thumbnails*) & `?.` help with unknown. 
+
 - [Stripe](https://stripe.com/?utm_campaign=paid_brand-US_Search_Brand_Stripe_Control-1803852691&utm_medium=cpc&utm_source=google&ad_content=604030746212&utm_term=stripe&utm_matchtype=p&utm_adposition=&utm_device=c&gclid=CjwKCAjwxr2iBhBJEiwAdXECw9BcpcbVI09UivWmp_SZ3W3uapO6fPcNs-CDILBhvUHbqb-q9eeMwhoCjDsQAvD_BwE) for Financial payment System: 
     - Prebuilt Checkout [Page](https://stripe.com/docs/checkout/quickstart?client=react) (also works w/ Next.js)
        - Test Payment Pocessing with psuedo-cards on Prebuilt Checkout [here](https://stripe.com/docs/checkout/quickstart?client=react)
@@ -125,7 +127,7 @@ const items = await fetch(
 #### **helpful hint:** 
 - console log testing with `ctr-alt-l` 
 - CSS styles: clamp [here](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp)
-- Always Stay Positive & When in Doubt Double Check Permissions :)
+- Always Stay Positive & Triple Check Permissions :)
 
 ## Additional Images:
 - Homepage Footer:
@@ -139,9 +141,13 @@ Future Structure (stx):
     - Terms & Conditions
     - Privacy Page
     - userAuth/Login Page (firebase <3)
+        - NavBar login/signup vs logout 
+        - Authentification page (login vs signup)
     - Confirmation vs Failure Page.
 - ItemDetails: 
-    - Reviews to be Iterated through (component < reviews >),  
+    - Reviews generation on Strapi,
+    - Componenet to Iterate Reviews Through in Tab: make it a 3x limit?  
+    - Prev/Next useNavigate through params items. 
     - Carousel for Related Products(set cap to higher than 4 items) previous next buttons based on current params (home at end or infinite loop?), 
     - WishList has to change color of heart & add to user profile
 - Item Component: image changes slightly on hover to new image? do i want to find new image? 
