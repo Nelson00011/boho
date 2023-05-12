@@ -100,6 +100,9 @@ const items = await fetch(
     - Installation & [docs](https://formik.org/docs/overview#installation) with [video](https://www.youtube.com/watch?v=oiNtnehlaTo)
     - **[Yup](https://www.npmjs.com/package/yup)** Object schema validation [here](https://formik.org/docs/guides/validation)
 
+- [jsonwebtoken npm](https://www.npmjs.com/package/jsonwebtoken) part of user Authentification. 
+- [bcrypt.js](https://www.npmjs.com/package/bcryptjs) part of password hasing for user Authentification. 
+
 
 #### **style:** 
 - **[Material UI CORE](https://mui.com/)** React UI LIBRARY *great for standardizing projects*
