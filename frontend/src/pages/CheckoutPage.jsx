@@ -101,6 +101,7 @@ const checkOutSchema = [
 //COMMENT actual page
 function Checkout(){
     const [activeStep, setActiveStep] = useState(0);
+    console.log("TCL: Checkout -> [activeStep]", activeStep)
     const cart = useSelector((state) => state.cart.cart);
     const isFirstStep = activeStep === 0;
     const isSecondStep = activeStep === 1;
@@ -223,9 +224,8 @@ function Checkout(){
                     borderRadius: 0,
                     padding: "15px 40px",
                   }}
-                  onClick={isFirstStep || isSecondStep ? () => setActiveStep(activeStep + 1) : () => setActiveStep(2)}
-                >
-                  {isFirstStep || isSecondStep  ? "Next" : "Place Order"}
+                  >
+                  {!isSecondStep  ? "Next" : "Place Order"}
                 </Button>
               </Box>
             </form>
