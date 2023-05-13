@@ -100,7 +100,7 @@ const items = await fetch(
     - Installation & [docs](https://formik.org/docs/overview#installation) with [video](https://www.youtube.com/watch?v=oiNtnehlaTo)
     - **[Yup](https://www.npmjs.com/package/yup)** Object schema validation [here](https://formik.org/docs/guides/validation)
 
-- [jsonwebtoken npm](https://www.npmjs.com/package/jsonwebtoken) part of user Authentification. 
+- jsonwebtoken / [jwt](https://jwt.io/) for Authentification & install [here]((https://www.npmjs.com/package/jsonwebtoken))
 - [bcrypt.js](https://www.npmjs.com/package/bcryptjs) part of password hasing for user Authentification. 
 
 
