@@ -152,4 +152,6 @@ Future Structure (stx):
 - WISHLIST: for logged in users. 
 - Primary Colors: Green/Blue Bohemian themes. 
 - HomePage: functionality to Holday Sale item (link to new items only, etc..)Add Validation to FORM requirements. 
+
+
 -->

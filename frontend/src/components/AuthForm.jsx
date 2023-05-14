@@ -1,3 +1,6 @@
+//TOOD register form vs login
+//Register: username, email, first name, last name, phone, birthday, address (connect to shipping & new button (Same as Autofilled from Account))
+
 import {
     Form,
     Link,
