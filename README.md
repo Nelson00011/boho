@@ -8,7 +8,7 @@
 - Server side (*backend*) uses ***Strapi.js*** (CMS) in combination with ***SQLite*** to provide database structure that ***React Redux*** uses on the frontend when interfacing between client and server side. 
 - ***Stripe*** payment used in combination with Matieral UI stepper checkout form. ***Material UI*** in combination with traditional CSS is used for a cohesive design aesthetic. 
 
-# Screen Shots:
+## Screen Shots:
 <p align="center">Please reference the screenshot folder for more available images</p>
 
 - Homepage with react-carousal, MUI tabs, Strapi/SQLite database for loaded items:
@@ -18,7 +18,7 @@
 - Stripe Payment Checkout with Material UI stepper: 
 
 ![CheckoutPage-1](https://github.com/Nelson00011/boho/assets/112737682/89c467c7-7982-45a2-a7ab-e5fb36f88672)
-- 
+
 
 ## Technology Stack
 - **Frontend/Client:** React.js, MUI, Redux, Formik, Yup, HTML5, CSS
