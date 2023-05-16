@@ -23,6 +23,7 @@ const [count, setCount] = useState(1);
 const [item, setItem] = useState({});
 const [items, setItems] = useState([]);
 const [reviews, setReviews] = useState([])
+console.log("TCL: ItemsDetails -> [reviews", reviews)
 const [loadingItem, setLoadingItem] = useState(true);
 const [loadingItems, setLoadingItems] = useState(true);
 
@@ -152,12 +153,13 @@ return (
         </Box>
         <Box display='flex' flexWrap="wrap" gap="15px">
             {tabValue === 'description' && (<div>{item?.attributes?.longDescription}</div>)}
-{/* TODO review component*/}
 
-        {tabValue === 'reviews' && reviews.slice(0,3).map((review, index)=> (
+
+        {tabValue === 'reviews' && reviews && reviews.slice(0,3).map((review, index)=> (
         <Review review={review} index={index} key={`review-${review.id}`}/>
       ))}
 
+      {tabValue === 'reviews' &&  reviews.length === 0 && <div>Currently no reviews...</div>}
         </Box>
         {/* SIMILAR CATEGORY ITEMS */}
         <Box mt="50px" width="100%">
