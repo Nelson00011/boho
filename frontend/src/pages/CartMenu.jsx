@@ -87,7 +87,7 @@ const CartMenu = () => {
                               dispatch(decreaseCount({ id: item.id }))
                             }
                           >
-                            <RemoveIcon />
+                          <RemoveIcon />
                           </IconButton>
                           <Typography>{item.count}</Typography>
                           <IconButton
