@@ -1,6 +1,8 @@
 //TODO: Carousel Additional Products, WishList Conditional on AUTH()
+//TODO full length of items for prev/next based on max/min Length
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { IconButton, Box, Typography, Button, Tabs, Tab } from "@mui/material";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import AddIcon from "@mui/icons-material/Add";
@@ -14,6 +16,7 @@ import Review from "../components/Review";
 
 function ItemsDetails(){
 const dispatch = useDispatch();
+const navigate = useNavigate();
 const { itemId } = useParams();
 const [tabValue, setTabValue] = useState("description");
 const [count, setCount] = useState(1);
@@ -88,7 +91,14 @@ return (
             <Box flex="1 1 50%" mb="40px">
           <Box display="flex" justifyContent="space-between">
             <Box>Home/Fashion/ {item?.attributes?.name}</Box>
-            <Box>Prev Next</Box>
+            <Box>
+            <Button
+            onClick={() => navigate(`/item/${itemId == 1 ? "20" : itemId - 1 }`)}
+            >Prev</Button>
+            <Button
+             onClick={() => navigate(`/item/${itemId == 20 ? "1" : itemId*1 + 1}`)}
+            >Next</Button>
+            </Box>
           </Box>
 
           <Box m="65px 0 25px 0">
@@ -110,7 +120,6 @@ return (
                     <IconButton onClick={() => setCount(count + 1)}>
                     <AddIcon />
                     </IconButton>
-
             </Box>
 
             <Button

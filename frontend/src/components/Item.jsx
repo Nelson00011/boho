@@ -28,8 +28,7 @@ const Item = ({ item, width }) => {
     //     attributes: {
     //       formats: {
     //         medium: { url },
- 
-    //       },
+     //       },
     //     },
     //   },
     // } = image;

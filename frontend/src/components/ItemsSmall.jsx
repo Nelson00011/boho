@@ -11,7 +11,7 @@ const ItemSmall = ({
    item }) => {
 
     const navigate = useNavigate();
-    const { category, price, name, image } = item.attributes;
+    const { price, name, image } = item.attributes;
     const url = image.data.attributes.formats.medium.url || image.data.attributes.url
 
     return (
@@ -19,7 +19,7 @@ const ItemSmall = ({
                   <FlexBox p="15px 0">
                     <Box flex="1 1 40%">
                       <img
-                        alt={item.name}
+                        alt={name}
                         width="123px"
                         height="164px"
                         src={`http://localhost:1337${url}`}
@@ -34,7 +34,7 @@ const ItemSmall = ({
                         </Typography>
                         <IconButton
                           onClick={() =>
-                            dispatch(removeFromWishList({ id: item.id }))
+                           removeFromWishList({ id: item.id })
                           }
                         >
                           <CloseIcon />
@@ -43,7 +43,7 @@ const ItemSmall = ({
                       <Typography>{item.attributes.shortDescription}</Typography>
                       <FlexBox m="15px 0">                         
                       <Typography fontWeight="bold">
-                        ${item.attributes.price}
+                        ${price}
                         </Typography>
                       </FlexBox>
                     </Box>
