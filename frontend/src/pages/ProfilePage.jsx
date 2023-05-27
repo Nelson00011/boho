@@ -3,7 +3,7 @@
 //import { getAuthToken } from '../uti/auth';
 //Components: UserInfo, UserOrders, UserWishList(<Item />)
 
-const ProfilePage = ({}) => {
+const ProfilePage = () => {
     
     return (
         <div>

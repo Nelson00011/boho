@@ -1,6 +1,7 @@
 //TOOD register form vs login
 //Register: username, email, first name, last name, phone, birthday, address (connect to shipping & new button (Same as Autofilled from Account))
 import { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 import Alert from '@mui/material/Alert';
 import Avatar from '@mui/material/Avatar';
@@ -38,7 +39,9 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 function AuthForm() {
-  const [token, setToken] = useState(null);
+  const navigate = useNavigate();
+  const token = localStorage.getItem('token')
+  // const [token, setToken] = useState(null);
   const [error, setError] = useState([]);
   const [open, setOpen] = useState(true);
 
@@ -55,8 +58,6 @@ function AuthForm() {
       password: data.get('password'),
     };
 
-    console.log(authData);
-
     const response = await fetch('http://localhost:1337/api/auth/local', {
       method: 'POST',
       body: JSON.stringify(authData),
@@ -66,23 +67,43 @@ function AuthForm() {
     })
 
     if (response.status === 422 || response.status === 401) {
-      alert(`Alert Response Status:` + response.status)
+      alert(`Alert Response Status: `, response.status)
       }
 
-
+      //COMMMENT: confirmation of strapi backend
     const responseJSON = await response.json();
     console.log("TCL: onSubmit -> responseJSON", responseJSON)
+    
     const jwt = await responseJSON.jwt;
     console.log("TCL: onSubmit -> token", token)
-    setToken(jwt)
-    if(!token){
-      const errorList = await responseJSON.error.details.errors
+    localStorage.setItem('token', jwt)
+    
+    
+    if(token || responseJSON.jwt){
+      setOpen(true)
+      
+      //store token to local storage:
+      localStorage.setItem('token', token)
+      const expiration = new Date();
+      expiration.setHours(expiration.getHours() + 1);
+      localStorage.setItem('expiration', expiration.toISOString());
+
+      navigate('/profile');
+
+    }
+    else{
+      if(response.status === 400){
+        const credentialFail = await responseJSON.error
+        setError([credentialFail])
+      }
+      else {
+      const errorList = await responseJSON?.error?.details?.errors || responseJSON.error.message
       console.log("TCL: onSubmit -> errorList", errorList)
       setError(errorList)
       console.log("SET ERROR", error)
     }
+   }     
 
-    //TODO setTOKEN
   };
 
   return (
@@ -97,7 +118,7 @@ function AuthForm() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'primary[500]' }}>
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LoginIcon />
           </Avatar>
           <Typography component="h1" variant="h5">

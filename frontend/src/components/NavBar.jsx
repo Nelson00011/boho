@@ -1,5 +1,5 @@
 //Pages
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Badge, Box, IconButton } from "@mui/material";
 import { PersonOutline, ShoppingBagOutlined, MenuOutlined, SearchOutlined } from "@mui/icons-material";
@@ -17,14 +17,26 @@ function NavBar (){
     const dispatch = useDispatch();
     const cart = useSelector((state) => state.cart.cart);
     const [login, setLogin] = useState(false);
+    const token = localStorage.getItem('token')
     //TODO HERE Auth() LOGO
+    useEffect(()=>
+        setLogin(localStorage.getItem('token')), [token]
+    )
+    
 
     const loggedIn = <>
         <IconButton 
+        onClick={()=>navigate('/profile')}
         className={classes.iconButton}>
             <PersonOutline /> 
         </IconButton>
-        <IconButton className={classes.iconButton}>
+        <IconButton 
+        onClick={()=> {
+            localStorage.setItem('token', false)
+            setLogin(false)
+            navigate('/home')
+        }}
+        onClickclassName={classes.iconButton}>
             <LogoutIcon /> 
         </IconButton>
         </>
@@ -47,7 +59,8 @@ function NavBar (){
                     <IconButton className={classes.iconButton}>
                         <SearchOutlined />
                     </IconButton>
-                    {login ? loggedIn : loggedOut}
+                    {login && loggedIn}
+                    {!login && loggedOut}
                      {/* LogIn Icon Test */}
                      
                      
