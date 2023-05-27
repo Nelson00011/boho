@@ -20,7 +20,8 @@ function NavBar (){
     //TODO HERE Auth() LOGO
 
     const loggedIn = <>
-        <IconButton className={classes.iconButton}>
+        <IconButton 
+        className={classes.iconButton}>
             <PersonOutline /> 
         </IconButton>
         <IconButton className={classes.iconButton}>
@@ -29,7 +30,9 @@ function NavBar (){
         </>
 
     const loggedOut = <>
-        <IconButton className={classes.iconButton}>
+        <IconButton 
+        onClick={()=>navigate('/auth')}
+        className={classes.iconButton}>
                 <LoginIcon /> 
         </IconButton>
         </>

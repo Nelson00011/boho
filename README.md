@@ -85,7 +85,8 @@ const items = await fetch(
     - Admin Panel of Strapi `http://localhost:1337/admin`
     - Video Help found [here](https://www.youtube.com/watch?v=gB8HRpIAE3o)
     - Rest API [info](https://docs.strapi.io/dev-docs/api/rest)/populate [here](https://docs.strapi.io/dev-docs/api/rest/populate-select) & filter [info](https://docs.strapi.io/dev-docs/api/rest/filters-locale-publication)
-    - **helpful hint:** returns null if not defined, check image sizes in formats (*avoid thumbnails*) & `?.` help with unknown. 
+    - **helpful hint:** returns null if not defined, check image sizes in formats (*avoid thumbnails*) & `?.` help with unknown. `http://localhost:1337/` must be used, http required for strapi. 
+
 
 - [Stripe](https://stripe.com/?utm_campaign=paid_brand-US_Search_Brand_Stripe_Control-1803852691&utm_medium=cpc&utm_source=google&ad_content=604030746212&utm_term=stripe&utm_matchtype=p&utm_adposition=&utm_device=c&gclid=CjwKCAjwxr2iBhBJEiwAdXECw9BcpcbVI09UivWmp_SZ3W3uapO6fPcNs-CDILBhvUHbqb-q9eeMwhoCjDsQAvD_BwE) for Financial payment System: 
     - Prebuilt Checkout [Page](https://stripe.com/docs/checkout/quickstart?client=react) (also works w/ Next.js)
@@ -100,7 +101,9 @@ const items = await fetch(
     - Installation & [docs](https://formik.org/docs/overview#installation) with [video](https://www.youtube.com/watch?v=oiNtnehlaTo)
     - **[Yup](https://www.npmjs.com/package/yup)** Object schema validation [here](https://formik.org/docs/guides/validation)
 
-- jsonwebtoken / [jwt](https://jwt.io/) for Authentification & install [here](https://www.npmjs.com/package/jsonwebtoken)
+- **PostMan** for API Tests [here](https://www.postman.com/)
+    - jsonwebtoken / [jwt](https://jwt.io/) for Authentification & install [here](https://www.npmjs.com/package/jsonwebtoken)
+    - jwt Debugger [here](https://jwt.io/#debugger-io)
 - [bcrypt.js](https://www.npmjs.com/package/bcryptjs) part of password hasing for user Authentification. 
 
 
@@ -115,6 +118,7 @@ const items = await fetch(
     npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
     ```
     - MUI Palette [here](https://mui.com/material-ui/customization/palette/)
+    - MUI Alert [here](https://mui.com/material-ui/react-alert/)
     - MUI with CSS Modules style library [here](https://mui.com/material-ui/guides/interoperability/)
     - Additional fun in grid-template-columns [here](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns)
     - MUI react-tab [here](https://mui.com/material-ui/react-tabs/) (*avoid scrolling option*)
@@ -126,6 +130,7 @@ const items = await fetch(
 
 #### **helpful hint:** 
 - console log testing with `ctr-alt-l` 
+- when a Promise is returned as 'fufilled' use await to get actual item.
 - CSS styles: clamp [here](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp)
 - Always Stay Positive & Triple Check Permissions :)
 

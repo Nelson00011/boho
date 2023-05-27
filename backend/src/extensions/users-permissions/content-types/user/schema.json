@@ -9,8 +9,7 @@
     "displayName": "User"
   },
   "options": {
-    "draftAndPublish": false,
-    "timestamps": true
+    "draftAndPublish": false
   },
   "attributes": {
     "username": {
@@ -71,6 +70,24 @@
       "relation": "oneToMany",
       "target": "api::review.review",
       "mappedBy": "users_permissions_user"
+    },
+    "wishlist": {
+      "type": "json"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "richtext",
+      "default": "Update Bio!",
+      "maxLength": 150
+    },
+    "birthday": {
+      "type": "date",
+      "required": true
     }
   }
 }

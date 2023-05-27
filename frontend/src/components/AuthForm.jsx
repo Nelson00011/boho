@@ -1,56 +1,166 @@
 //TOOD register form vs login
 //Register: username, email, first name, last name, phone, birthday, address (connect to shipping & new button (Same as Autofilled from Account))
+import { useEffect, useState } from 'react';
 
-import {
-    Form,
-    Link,
-    useSearchParams,
-    useActionData,
-    useNavigation,
-  } from 'react-router-dom';
-  
-//   import classes from './AuthForm.module.css';
-  
-  function AuthForm() {
-    //gets data for action return
-    const data = useActionData();
-    const navigation = useNavigation();
-  
-    const [searchParams] = useSearchParams();
-    const isLogin = searchParams.get('mode') === 'login';
-    const isSubmitting = navigation.state === 'submitting';
-  
-    return (
-      <>
-        <Form method="post" >
-          <h1>{isLogin ? 'Log in' : 'Create a new user'}</h1>
-          {data && data.errors && (
-            <ul>
-              {Object.values(data.errors).map((err) => (
-                <li key={err}>{err}</li>
-              ))}
-            </ul>
-          )}
-          {data && data.message && <p>{data.message}</p>}
-          <p>
-            <label htmlFor="email">Email</label>
-            <input id="email" type="email" name="email" required />
-          </p>
-          <p>
-            <label htmlFor="image">Password</label>
-            <input id="password" type="password" name="password" required />
-          </p>
-          <div className={classes.actions}>
-            <Link to={`?mode=${isLogin ? 'signup' : 'login'}`}>
-              {isLogin ? 'Create new user' : 'Go to Login'}
-            </Link>
-            <button disabled={isSubmitting}>
-              {isSubmitting ? 'Submitting...' : 'Save'}
-            </button>
-          </div>
-        </Form>
-      </>
-    );
-  }
-  
-  export default AuthForm;
+import Alert from '@mui/material/Alert';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LoginIcon from '@mui/icons-material/Login';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Collapse from '@mui/material/Collapse';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+function Copyright(props) {
+  return (
+    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
+
+
+
+// TODO remove, this demo shouldn't need to reset the theme.
+
+const defaultTheme = createTheme();
+
+function AuthForm() {
+  const [token, setToken] = useState(null);
+  const [error, setError] = useState([]);
+  const [open, setOpen] = useState(true);
+
+  useEffect(()=>
+  setOpen(true), [error]
+  )
+
+  async function onSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+
+    const authData = {
+      identifier: data.get('email'),
+      password: data.get('password'),
+    };
+
+    console.log(authData);
+
+    const response = await fetch('http://localhost:1337/api/auth/local', {
+      method: 'POST',
+      body: JSON.stringify(authData),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+
+    if (response.status === 422 || response.status === 401) {
+      alert(`Alert Response Status:` + response.status)
+      }
+
+
+    const responseJSON = await response.json();
+    console.log("TCL: onSubmit -> responseJSON", responseJSON)
+    const jwt = await responseJSON.jwt;
+    console.log("TCL: onSubmit -> token", token)
+    setToken(jwt)
+    if(!token){
+      const errorList = await responseJSON.error.details.errors
+      console.log("TCL: onSubmit -> errorList", errorList)
+      setError(errorList)
+      console.log("SET ERROR", error)
+    }
+
+    //TODO setTOKEN
+  };
+
+  return (
+   
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'primary[500]' }}>
+            <LoginIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography>
+          <Collapse in={open}>
+          {error &&  error.map((err,index) => (
+          <Alert severity="error" sx={{ m: 2 }} key={index} onClose={() => {
+            setOpen(false);
+          }}>{err.message}</Alert>
+        ))}
+            </Collapse>
+          <Box component="FORM" onSubmit={onSubmit} noValidate sx={{ mt: 1 }}>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Sign In
+            </Button>
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="#" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+        <Copyright sx={{ mt: 8, mb: 4 }} />
+      </Container>
+ 
+  );
+}
+
+export default AuthForm;

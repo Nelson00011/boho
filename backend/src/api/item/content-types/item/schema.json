@@ -49,6 +49,16 @@
       "relation": "oneToMany",
       "target": "api::review.review",
       "mappedBy": "item"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "fashion",
+        "handBags",
+        "scarves",
+        "jewelry",
+        "beauty"
+      ]
     }
   }
 }

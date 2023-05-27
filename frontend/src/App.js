@@ -8,7 +8,7 @@ import Confirmation from './pages/ConfirmationPage';
 import NavBar from './components/NavBar';
 import CartMenu from './pages/CartMenu';
 import Footer from './components/Footer';
-
+import AuthenticationPage from './pages/Authentification';
 
 
 
@@ -33,6 +33,7 @@ function App() {
         <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/auth" element={<AuthenticationPage />} />
           <Route path="item/:itemId" element={<ItemDetails />} />
           <Route path="checkout" element={<Checkout />} />
           <Route path="checkout/success" element={<Confirmation />} />
