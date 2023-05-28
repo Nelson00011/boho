@@ -20,7 +20,7 @@ function NavBar (){
     const token = localStorage.getItem('token')
     //TODO HERE Auth() LOGO
     useEffect(()=>
-        setLogin(localStorage.getItem('token')), [token]
+        setLogin(localStorage.getItem('token', false)), [token]
     )
     
 

@@ -79,7 +79,7 @@ function AuthForm() {
     localStorage.setItem('token', jwt)
     
     
-    if(token || responseJSON.jwt){
+    if(responseJSON.jwt){
       setOpen(true)
       
       //store token to local storage:
@@ -92,8 +92,9 @@ function AuthForm() {
 
     }
     else{
-      if(response.status === 400){
+      if(responseJSON.status === 404 || responseJSON.status === 401){
         const credentialFail = await responseJSON.error
+        console.log("TCL: onSubmit -> credentialFail", credentialFail)
         setError([credentialFail])
       }
       else {
@@ -102,7 +103,10 @@ function AuthForm() {
       setError(errorList)
       console.log("SET ERROR", error)
     }
-   }     
+   }    
+   
+   
+   
 
   };
 
@@ -171,7 +175,7 @@ function AuthForm() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/signup" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
