@@ -85,6 +85,7 @@ const items = await fetch(
     - Admin Panel of Strapi `http://localhost:1337/admin`
     - Video Help found [here](https://www.youtube.com/watch?v=gB8HRpIAE3o)
     - Rest API [info](https://docs.strapi.io/dev-docs/api/rest)/populate [here](https://docs.strapi.io/dev-docs/api/rest/populate-select) & filter [info](https://docs.strapi.io/dev-docs/api/rest/filters-locale-publication)
+    - MUI form information [here](https://mui.com/material-ui/api/form-control/)
     - **helpful hint:** returns null if not defined, check image sizes in formats (*avoid thumbnails*) & `?.` help with unknown. `http://localhost:1337/` must be used, http required for strapi. 
 
 
